@@ -1,0 +1,14 @@
+package com.androidapp.bahs.activity;
+import android.os.Bundle;
+
+import com.androidapp.bahs.R;
+import com.androidapp.bahs.activity.base.BaseActivity;
+
+public class HomeActivity extends BaseActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home);
+    }
+}

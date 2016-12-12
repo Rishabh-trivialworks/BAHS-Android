@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="signup_successful_alert">User has registered successfully</string>
+    <string name="signup_already_registered__alert">User is already registered</string>
+    <string name="alert_welcome_error_facebook_data">Error in getting Facebook Profile Data.</string>
+    <string name="are_you_sure_you_want_to_logout">Are you sure that you want to logout</string>
+    <string name="press_back_again_to_exit">Press Back Again To Exit</string>
+    <string name="no_data_found">No Record found</string>
+    <string name="no_program_added_to_my_workout">No Program Added To My Work0ut</string>
+    <string name="no_images_found">No Images found</string>
+    <string name="alert">Alert !"</string>
+    <string name="video_is_locked">This Workout is Locked</string>
+    <string name="program_is_locked">This Program is Locked</string>
+    <string name="program_added_successfully">Program Added Successfully to \'My Workout\'</string>
+    <string name="invite_popup_cannot_beshown">Invite popup Cannot be shown because of an error. Please try again after some time</string>
+    <string name="are_you_sure_you_want_to_delete_my_program">"Are you sure you want to delete this program from MyWorkout?"</string>
+    <string name="are_you_sure_you_want_to_delete_images">"Are you sure you want to delete these images?"</string>
+    <string name="are_you_sure_you_want_to_delete_image">"Are you sure you want to delete this image?"</string>
+    <string name="please_select_atleast_one">Please Select Atleast One</string>
+    <string name="please_select_atmost_five">Please Select Atmost Five</string>
+    <string name="please_add_a_before_photo">Please share a before photo</string>
+    <string name="please_add_a_after_photo">Please share an after photo</string>
+    <string name="loadingMore">Loading Data ...</string>
+    <string name="please_select_image_or_enter_text_to_share">"Please Select an Image or Enter Text to share"</string>
+    <string name="you_have_successfully_completed">"You have successfully completed"</string>
+    <string name="please_enter_text_to_share">"Please Enter Text to share"</string>
+    <string name="browser_not_found">"Browser not found"</string>
+    <string name="gcm_registered">From GCM: device successfully registered!</string>
+    <string name="gcm_unregistered">From GCM: device successfully unregistered!</string>
+    <string name="gcm_message">From GCM: you got message!</string>
+    <string name="gcm_error">From GCM: error (%1$s).</string>
+    <string name="gcm_recoverable_error">From GCM: recoverable error (%1$s).</string>
+    <string name="gcm_deleted">From GCM: server deleted %1$d pending messages!</string>
+    <string name="server_registering">Trying (attempt %1$d/%2$d) to register device on Demo Server.</string>
+    <string name="server_registered">From Demo Server: successfully added device!</string>
+    <string name="server_unregistered">From Demo Server: successfully removed device!</string>
+    <string name="server_register_error">Could not register device on Demo Server after %1$d attempts.</string>
+    <string name="server_unregister_error">Could not unregister device on Demo Server .</string>
+    <string name="are_you_sure_you_want_to_delete_this_feed">"Are you sure you want to delete this feed?"</string>
+    <string name="max_140_characyters_allowed">"Maximum 140 characters are allowed"</string>
+    <string name="max_500_characyters_allowed">"Maximum 500 characters are allowed"</string>
+    <string name="are_you_sure_you_want_to_deactivate_your_account">Are you sure you want to Deactivate your account?</string>
+    <string name="sorry_image_could_not_be_loaded">Sorry, Image couldn\'t be loaded</string>
+    <string name="are_you_sure_you_want_turn_off_notifications">"Are you sure you want to turn off Notifications ?"</string>
+    <string name="are_you_sure_you_want_turn_on_notifications">"Are you sure you want to turn on Notifications ?"</string>
+    <string name="you_must_complete_week_before_continuing">"You must complete the previous weeks before continuing this program"</string>
+    <string name="you_must_save_your_profile_after_making_changes">Data not saved. Are you sure you wish to exit?</string>
+    <string name="are_you_sure_you_dont_want_to_submit_your_feedabck">Are you sure you want to cancel your feedback?</string>
+    <string name="you_can_enable_disable_the_audio_of_any_video">Listen to your own soundtrack. Just select your music, open the Performix Workout App and begin!</string>
+
+
+
+    <string name="onDismiss">onDismiss</string>
+    <string name="title">Are you Sure?</string>
+    <string name="message">Do you want to close the app?</string>
+
+
+</resources>
