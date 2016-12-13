@@ -30,5 +30,8 @@ dependencies {
     compile files('libs/acra-4.5.0.jar')
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-    compile 'com.crittercism:crittercism-android-agent:+'
+    compile 'com.crittercism:crittercism-android-agent:5.5.0-rc-1'
+    compile 'com.google.firebase:firebase-core:9.4.0'
+    compile 'com.google.android.gms:play-services-gcm:9.4.0'
 }
+apply plugin: 'com.google.gms.google-services'
