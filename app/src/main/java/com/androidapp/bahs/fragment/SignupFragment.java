@@ -42,7 +42,7 @@ import com.androidapp.bahs.utils.AppMessages;
 
 
 public class SignupFragment extends Fragment implements View.OnClickListener {
-    private TextView mTxtError, mTxtCheckBox, mTxtTermsAndConditions, mTxt_or_join, mTextsignup,mLogintxt;
+    private TextView mTxtError, mTxtCheckBox, mTextsignup,mLogintxt;
     private EditText mFirstNameEditText, mLastNameEditText, mEmailEditText, mPasswordEditText;
     private Button mBtnRegister;
     private ImageView mImgFirstName, mImgLastName, mImgEmail, mImgPassword, mImg_Check_Terms;
@@ -60,7 +60,7 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
         refrenceWrapper = RefrenceWrapper.getRefrenceWrapper(getActivity());
         initUI(mRootView);
         setLoginTxtColor();
-        updateRememberMeStatus(mTermsAndCondition);
+        acceptTermsAndCondition(mTermsAndCondition);
         //refrenceWrapper.getFontTypeFace().setRobotoThinTypeFace(getActivity(), mFirstNameEditText, mLastNameEditText, mEmailEditText, mPasswordEditText, mBtnRegister, mTxtError, mTxtCheckBox, mTextsignup,mLogintxt);
         return mRootView;
     }
@@ -80,7 +80,6 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
         mImgEmail = (ImageView) rootView.findViewById(R.id.img_email);
         mImgPassword = (ImageView) rootView.findViewById(R.id.img_password);
         mBtnRegister = (Button) rootView.findViewById(R.id.btn_register);
-        mTxtTermsAndConditions = (TextView) rootView.findViewById(R.id.txt_checkbox);
         mLogintxt = (TextView) rootView.findViewById(R.id.login_txt);
 //        mTxt_or_join = (TextView) rootView.findViewById(R.id.txt_join);
         //mBtnFacebook = (Button) rootView.findViewById(R.id.btn_fb_signup);
@@ -228,11 +227,11 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
             case R.id.cb_signup:
                 if(mTermsAndCondition){
                     mTermsAndCondition=false;
-                    updateRememberMeStatus(mTermsAndCondition);
+                    acceptTermsAndCondition(mTermsAndCondition);
                 }
                 else{
                     mTermsAndCondition=true;
-                    updateRememberMeStatus(mTermsAndCondition);
+                    acceptTermsAndCondition(mTermsAndCondition);
                 }
                 break;
         }
@@ -274,13 +273,13 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
         if (refrenceWrapper.getmDeviceUtilHandler().isInternetOn(getActivity()) == true) {
                // service call logic goes here
         } else {
-            AlertUtils.showToast(getActivity(),"No Internet Access");
+            AlertUtils.showToast(getActivity(),AppMessages.NO_INTERNET_AVAILABLE);
             return;
         }
 
 
     }
-    private void updateRememberMeStatus(boolean update) {
+    private void acceptTermsAndCondition(boolean update) {
         if (update) {
             mImg_Check_Terms.setImageResource(R.drawable.checkbox_s);
             }else{

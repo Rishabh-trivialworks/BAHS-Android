@@ -12,5 +12,7 @@
     <string name="lastname">Last Name</string>
     <string name="firstname">First Name</string>
     <string name="btnname">SIGNUP</string>
+    <string name="submit">SUBMIT</string>
+    <string name="email_forgot">Enter your email and we\'ll send you the link to reset the password.</string>
 
 </resources>

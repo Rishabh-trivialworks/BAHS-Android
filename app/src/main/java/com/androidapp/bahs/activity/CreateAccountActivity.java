@@ -35,7 +35,7 @@ public class CreateAccountActivity extends SocialMediaIntegration implements Vie
     private RefrenceWrapper refrenceWrapper;
     private Fragment mFragment;
     private LinearLayout LoginSignupLinearLayout;
-    private TextView mLogintxt, mTextor;
+    private TextView mLogintxt;
     private FrameLayout mFrameLayout;
 
 
@@ -66,7 +66,6 @@ public class CreateAccountActivity extends SocialMediaIntegration implements Vie
         mBtnSignup = (Button) findViewById(R.id.login_btnSignUp);
 
         mLogintxt = (TextView) findViewById(R.id.login_txt);
-        mTextor = (TextView) findViewById(R.id.or_text);
         setListeners();
     }
     private void setListeners() {
@@ -120,22 +119,7 @@ public class CreateAccountActivity extends SocialMediaIntegration implements Vie
 
         }
     }
-    public void showTextView(final TextView view, String message) {
-        view.setVisibility(View.VISIBLE);
-        view.setText(message);
-        Timer t = new Timer(false);
-        t.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                runOnUiThread(new Runnable() {
-                    public void run() {
-                       // refrenceWrapper.getmAnimationHandler().fadeInAnimation(mContext, view);
-                        view.setVisibility(View.INVISIBLE);
-                    }
-                });
-            }
-        }, 3000);
-    }
+
     public void GotoLoginFragment() {
         CommonUtility.hideSoftKeyboard(CreateAccountActivity.this);
         SignupFragment signupFragment = new SignupFragment();
@@ -177,7 +161,6 @@ public class CreateAccountActivity extends SocialMediaIntegration implements Vie
             if (tokenValue != null && tokenValue.length() > 0) {
 
             } else {
-               // AppSharedPreferences.getInstance().setFromLoginSignUp(true);
                 Intent intent = new Intent(this, RegistratinIntentService.class);
                 startService(intent);
                 return;
@@ -201,6 +184,6 @@ public class CreateAccountActivity extends SocialMediaIntegration implements Vie
 
     @Override
     public void facbook_info(ModalFbUserProfile modelfbuser, String fb_access_token) {
-        AlertUtils.showToast(CreateAccountActivity.this, AppMessages.NO_INTERNET_AVAILABLE);
+        AlertUtils.showToast(CreateAccountActivity.this, modelfbuser.getName());
     }
 }

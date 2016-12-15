@@ -25,6 +25,7 @@ import android.widget.TextView;
 import com.androidapp.bahs.R;
 import com.androidapp.bahs.RefrenceWrapper;
 import com.androidapp.bahs.activity.CreateAccountActivity;
+import com.androidapp.bahs.activity.ForgotPasswordActivity;
 import com.androidapp.bahs.activity.base.BaseActivity;
 import com.androidapp.bahs.service.db.AppSharedPreferences;
 import com.androidapp.bahs.service.utils.AlertUtils;
@@ -181,7 +182,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         if (refrenceWrapper.getmDeviceUtilHandler().isInternetOn(getActivity()) == true) {
             // service call logic goes here
         } else {
-            AlertUtils.showToast(getActivity(),"No Internet Access");
+            AlertUtils.showToast(getActivity(),AppMessages.NO_INTERNET_AVAILABLE);
             return;
         }
 
@@ -196,7 +197,11 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                 doSignIn();
                 break;
             case R.id.tvforgot:
-                //forgot paasword screen open from here
+                if (refrenceWrapper.getmDeviceUtilHandler().isInternetOn(getActivity()) == true) {
+                    mCreateAccountActivity.activitySwitcher(ForgotPasswordActivity.class);
+                }else{
+                    AlertUtils.showToast(getActivity(),AppMessages.NO_INTERNET_AVAILABLE);
+                }
                 break;
 
             case R.id.linearlayoutInsideScrollView:

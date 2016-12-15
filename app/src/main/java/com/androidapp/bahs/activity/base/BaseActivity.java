@@ -6,9 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.androidapp.bahs.R;
+import com.androidapp.bahs.RefrenceWrapper;
 import com.crittercism.app.Crittercism;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by Aarshi on 12-12-2016.
@@ -16,6 +21,7 @@ import com.crittercism.app.Crittercism;
 
 public abstract class BaseActivity extends AppCompatActivity {
     protected AppCompatActivity mContext;
+    private RefrenceWrapper mRefrenceWrapper;
 
     @Override
     protected void onCreate(Bundle arg0) {
@@ -40,6 +46,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         startActivity(i);
         finish();
     }
+    public void activitySwitcher(Class<?> classToSwtich) {
+        Intent i = new Intent(this, classToSwtich);
+        startActivity(i);
+    }
     @Override
     public void finish() {
         super.finish();
@@ -55,5 +65,21 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         //Stop the analytics tracking
+    }
+    public void showTextView(final TextView view, String message) {
+        view.setVisibility(View.VISIBLE);
+        view.setText(message);
+        Timer t = new Timer(false);
+        t.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    public void run() {
+                        mRefrenceWrapper = RefrenceWrapper.getRefrenceWrapper(BaseActivity.this);
+                        view.setVisibility(View.INVISIBLE);
+                    }
+                });
+            }
+        }, 3000);
     }
 }
