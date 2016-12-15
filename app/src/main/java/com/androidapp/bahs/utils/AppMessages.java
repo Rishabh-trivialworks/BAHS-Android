@@ -4,7 +4,7 @@ public class AppMessages {
 
     /*-------------------------------- Network Message -------------------------------*/
     public static final String CONNECT_NETWORK = "Please Check Your Network Connection";
-
+    public static final String NO_INTERNET_AVAILABLE = "No internet connection.";
     /*-------------------------------- Login Message -------------------------------*/
     public interface CommonSignInSignUpMessages {
         String NO_EMAIL = "Email is blank";
@@ -19,7 +19,7 @@ public class AppMessages {
 
         String NO_SUBJECT="Subject is blank.";
         String PASSWORDUPDATEDSUCCESSFULLY="Password updated successfully";
-        String NO_INTERNET_AVAILABLE = "No internet connection.";
+
     }
     /*-------------------------------- Signup Message -------------------------------*/
 

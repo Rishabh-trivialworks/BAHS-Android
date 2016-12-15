@@ -1,10 +1,9 @@
 package com.androidapp.bahs.activity;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
@@ -16,17 +15,22 @@ import android.widget.TextView;
 
 import com.androidapp.bahs.R;
 import com.androidapp.bahs.RefrenceWrapper;
-import com.androidapp.bahs.activity.base.BaseActivity;
+import com.androidapp.bahs.facebook.CommonInterface;
+import com.androidapp.bahs.facebook.ModalFbUserProfile;
+import com.androidapp.bahs.facebook.SocialMediaIntegration;
+import com.androidapp.bahs.facebook.SocialMediaInterface;
+import com.androidapp.bahs.firebase.RegistratinIntentService;
 import com.androidapp.bahs.fragment.LoginFragment;
 import com.androidapp.bahs.fragment.SignupFragment;
+import com.androidapp.bahs.service.db.AppSharedPreferences;
 import com.androidapp.bahs.service.utils.AlertUtils;
 import com.androidapp.bahs.service.utils.CommonUtility;
-import com.androidapp.bahs.service.utils.LogUtils;
+import com.androidapp.bahs.utils.AppMessages;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class CreateAccountActivity extends BaseActivity implements View.OnClickListener{
+public class CreateAccountActivity extends SocialMediaIntegration implements View.OnClickListener,CommonInterface,SocialMediaInterface{
     private Button mFbLogin, mBtnSignup;
     private RefrenceWrapper refrenceWrapper;
     private Fragment mFragment;
@@ -86,7 +90,7 @@ public class CreateAccountActivity extends BaseActivity implements View.OnClickL
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, new LoginFragment())
                             .addToBackStack(null).setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE).commit();
                 }else{
-                    AlertUtils.showToast(CreateAccountActivity.this,"No Internet Access");
+                    AlertUtils.showToast(CreateAccountActivity.this, AppMessages.NO_INTERNET_AVAILABLE);
                 }
                 break;
             case R.id.login_btnSignUp:
@@ -100,16 +104,16 @@ public class CreateAccountActivity extends BaseActivity implements View.OnClickL
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, new SignupFragment())
                             .addToBackStack(null).setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE).commit();
                 }else{
-                    AlertUtils.showToast(CreateAccountActivity.this,"No Internet Access");
+                    AlertUtils.showToast(CreateAccountActivity.this, AppMessages.NO_INTERNET_AVAILABLE);
                 }
 
                 break;
 
             case R.id.btn_fb_signup:
                 if (refrenceWrapper.getmDeviceUtilHandler().isInternetOn(CreateAccountActivity.this) == true) {
-
+                    facebooklogin();
                 }else{
-                    AlertUtils.showToast(CreateAccountActivity.this,"No Internet Access");
+                    AlertUtils.showToast(CreateAccountActivity.this, AppMessages.NO_INTERNET_AVAILABLE);
                 }
                 break;
 
@@ -167,25 +171,36 @@ public class CreateAccountActivity extends BaseActivity implements View.OnClickL
 
     }
 
-   /* private void facebooklogin() {
-        if (refrenceWrapper.getmDeviceUtilHandler().isNetworkAvailable(this) == true) {
-            String tokenValue = AppSharedPreferences.getInstance().getTokenValue();
+    private void facebooklogin() {
+        if (refrenceWrapper.getmDeviceUtilHandler().isInternetOn(this) == true) {
+            String tokenValue = AppSharedPreferences.getInstance().getAccessToken();
             if (tokenValue != null && tokenValue.length() > 0) {
 
             } else {
-                AppSharedPreferences.getInstance().setFromLoginSignUp(true);
-                Intent i = new Intent(this, RegistrationIntentService.class);
-                this.startService(i);
+               // AppSharedPreferences.getInstance().setFromLoginSignUp(true);
+                Intent intent = new Intent(this, RegistratinIntentService.class);
+                startService(intent);
                 return;
             }
             ((CreateAccountActivity) this).login_facebook_getProfileInformation((CommonInterface) this);
 
         } else {
-            mCustomDialog = refrenceWrapper.getmCustomPassDialog((AppCompatActivity) this);
-            mBtnRetry = (Button) mCustomDialog.findViewById(R.id.dialogAdvance_btnRight);
-            mBtnRetry.setTag(AppMessages.SignInAndSignUpTags.FB);
-            mBtnRetry.setOnClickListener(this);
-            refrenceWrapper.showCustomPassDialog((AppCompatActivity) this);
+            AlertUtils.showToast(CreateAccountActivity.this, AppMessages.NO_INTERNET_AVAILABLE);
         }
-    }*/
+    }
+
+    @Override
+    public void incorrect_Credentials(String message) {
+
+    }
+
+    @Override
+    public void failourWifiOff() {
+
+    }
+
+    @Override
+    public void facbook_info(ModalFbUserProfile modelfbuser, String fb_access_token) {
+        AlertUtils.showToast(CreateAccountActivity.this, AppMessages.NO_INTERNET_AVAILABLE);
+    }
 }

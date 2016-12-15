@@ -80,7 +80,7 @@
             android:padding="10dp"
             android:src="@drawable/intro_cancel"
             android:textColor="@color/white"
-            android:visibility="invisible"
+            android:visibility="visible"
             android:textSize="@dimen/button_width_small"/>
 
 

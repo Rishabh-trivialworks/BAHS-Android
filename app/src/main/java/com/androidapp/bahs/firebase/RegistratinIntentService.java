@@ -4,6 +4,7 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.util.Log;
 
+import com.androidapp.bahs.service.db.AppSharedPreferences;
 import com.google.firebase.iid.FirebaseInstanceId;
 
 /**
@@ -21,6 +22,7 @@ public class RegistratinIntentService extends IntentService {
     @Override
     protected void onHandleIntent(Intent intent) {
         String token = FirebaseInstanceId.getInstance().getToken();
+        AppSharedPreferences.getInstance().setAccessToken(token);
         Log.i(mTAG, "FCM Registration Token: " + token);
     }
 }

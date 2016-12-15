@@ -11,6 +11,8 @@ import com.androidapp.bahs.service.utils.LogUtils;
 public class AppSharedPreferences {
 
     private static AppSharedPreferences instance;
+
+
     private final String mAccessToken = "mAccessToken";
     private final String mName = "name";
     private final String mUser_name = "user_name";

@@ -2,6 +2,7 @@ package com.androidapp.bahs;
 
 import android.app.Application;
 
+import com.androidapp.bahs.service.AppContext;
 import com.androidapp.bahs.service.db.DatabaseHelper;
 
 import org.acra.ACRA;
@@ -21,6 +22,8 @@ public class BAHSApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        AppContext.getInstance().setContext(this);
         ACRA.init(this);
         mDatabaseHelper = DatabaseHelper.getInstance(BAHSApp.this);
     }
