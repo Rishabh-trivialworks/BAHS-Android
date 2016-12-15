@@ -182,8 +182,8 @@ public class VideoTutorialActivity extends BaseActivity {
 
         @Override
         public void onCompletion(MediaPlayer mp) {
-            Intent in=new Intent(((VideoTutorialActivity.this)),HomeActivity.class);
-            mContext.startActivity(in);
+            activityCleanSwitcher(CreateAccountActivity.class);
+
         }
     }
 }
