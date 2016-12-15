@@ -1,5 +1,6 @@
 package com.androidapp.bahs.activity.base;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -34,6 +35,11 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
 
+    public void activityCleanSwitcher(Class<?> classToSwtich) {
+        Intent i = new Intent(this, classToSwtich);
+        startActivity(i);
+        finish();
+    }
     @Override
     public void finish() {
         super.finish();

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_green">
+
+    <RelativeLayout
+        android:id="@+id/fl_informationpage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/linearLayout2">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_indicator"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:id="@+id/indicator1"
+                        android:layout_width="7dp"
+                        android:layout_height="7dp"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/dot_transparent"/>
+
+                    <View
+                        android:id="@+id/indicator2"
+                        android:layout_width="7dp"
+                        android:layout_height="7dp"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/dot_transparent"/>
+
+                    <View
+                        android:id="@+id/indicator3"
+                        android:layout_width="7dp"
+                        android:layout_height="7dp"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/dot_transparent"/>
+
+                    <View
+                        android:id="@+id/indicator4"
+                        android:layout_width="7dp"
+                        android:layout_height="7dp"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/dot_transparent"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/activity_informatory_txt_skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:padding="10dp"
+            android:src="@drawable/intro_cancel"
+            android:textColor="@color/white"
+            android:visibility="invisible"
+            android:textSize="@dimen/button_width_small"/>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/heading_card">
+
+            <Button
+                android:id="@+id/activity_informatory_sign_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/dark_grey"
+                android:inputType="textCapSentences"
+                android:text="@string/btnname"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_22"/>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

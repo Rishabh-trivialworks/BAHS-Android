@@ -1,6 +1,7 @@
 package com.androidapp.bahs.service.utils;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -78,6 +80,14 @@ public class CommonUtility {
         InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
         if (inputMethodManager != null && activity != null && activity.getCurrentFocus()!=null) {
             inputMethodManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
+        }
+    }
+    public static void hideClickEvent(Context context, LinearLayout linearLayout) {
+        try {
+            InputMethodManager inputMethodManager = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(linearLayout.getWindowToken(), 0);
+        } catch (Exception e) {
+
         }
     }
 }

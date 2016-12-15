@@ -1,4 +1,5 @@
 package com.androidapp.bahs.service.utils;
+import android.text.TextUtils;
 import android.util.Base64;
 import java.util.UUID;
 import java.util.regex.Pattern;
@@ -73,13 +74,13 @@ public class StringUtils {
         return validation;
     }
 
-    public boolean isEmailValid(String email) {
+    public static boolean isEmailValid(String email) {
         Pattern emailPattern = Pattern.compile(".+@.+\\.[a-z]+");
         Boolean validation = emailPattern.matcher(email).matches();
         return validation;
     }
 
-    public boolean isPasswordValid(String email) {
+    public static boolean isPasswordValid(String email) {
         Pattern passPattern = Pattern.compile("((?=.*[a-z])(?=.*\\d).{6,16})");
         Boolean validation = passPattern.matcher(email).matches();
         return validation;
@@ -142,5 +143,32 @@ public class StringUtils {
             return false;
         }
         return true;
+    }
+    public static boolean isEmpty(String data) {
+
+        LogUtils.info(data);
+        if (TextUtils.isEmpty(data)) {
+            return true;
+        } else {
+            if (data == null) return true;
+            String inputData = data.trim();
+            if (inputData.equalsIgnoreCase("null")) {
+                return true;
+            } else if (inputData.equalsIgnoreCase("\"\"")) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public static boolean isPasswordLengthValid(String text, int length) {
+        boolean result = false;
+
+        if (text != null && text.length() > 0) {
+            if (text.length() >= length) {
+                return true;
+            }
+        }
+
+        return result;
     }
 }
