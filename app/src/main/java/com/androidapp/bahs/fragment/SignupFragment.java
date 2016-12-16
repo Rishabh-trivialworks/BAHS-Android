@@ -1,23 +1,15 @@
 package com.androidapp.bahs.fragment;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.Spannable;
 import android.text.SpannableString;
-import android.text.TextPaint;
 import android.text.TextWatcher;
 import android.text.method.LinkMovementMethod;
-import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.view.KeyEvent;
@@ -34,7 +26,6 @@ import android.widget.TextView;
 import com.androidapp.bahs.R;
 import com.androidapp.bahs.RefrenceWrapper;
 import com.androidapp.bahs.activity.CreateAccountActivity;
-import com.androidapp.bahs.service.db.AppSharedPreferences;
 import com.androidapp.bahs.service.utils.AlertUtils;
 import com.androidapp.bahs.service.utils.CommonUtility;
 import com.androidapp.bahs.service.utils.StringUtils;
@@ -222,7 +213,7 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
                 CommonUtility.hideClickEvent(getActivity(), mLinearLayoutInsideScrollView);
                 break;
             case R.id.login_txt:
-                ((CreateAccountActivity) getActivity()).GotoLoginFragment();
+                ((CreateAccountActivity) getActivity()).gotoLoginFragment();
                 break;
             case R.id.cb_signup:
                 if(mTermsAndCondition){

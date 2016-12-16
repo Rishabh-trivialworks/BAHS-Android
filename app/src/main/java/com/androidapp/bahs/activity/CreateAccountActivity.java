@@ -83,33 +83,11 @@ public class CreateAccountActivity extends SocialMediaIntegration implements Vie
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.login_txt:
-                if (refrenceWrapper.getmDeviceUtilHandler().isInternetOn(CreateAccountActivity.this) == true) {
-                    CommonUtility.hideSoftKeyboard(CreateAccountActivity.this);
-                    mFragment = refrenceWrapper.getmFragmentCallingUtilsHandler().getFragment(this,R.id.container);
-                    if (mFragment instanceof LoginFragment) {
-                        return;
-                    }
-                    LoginSignupLinearLayout.setVisibility(View.GONE);
-                    refrenceWrapper.getmFragmentCallingUtilsHandler().replaceAndCommitFragmentByAddingToBackStack(R.id.container, new LoginFragment(), this, true, "", false);
-                } else {
-                    AlertUtils.showToast(CreateAccountActivity.this, AppMessages.NO_INTERNET_AVAILABLE);
-                }
+                onButtonClick(true);
                 break;
             case R.id.login_btnSignUp:
-                if (refrenceWrapper.getmDeviceUtilHandler().isInternetOn(CreateAccountActivity.this) == true) {
-                    CommonUtility.hideSoftKeyboard(CreateAccountActivity.this);
-                    mFragment = refrenceWrapper.getmFragmentCallingUtilsHandler().getFragment(this,R.id.container);
-                    LoginSignupLinearLayout.setVisibility(View.GONE);
-                    if (mFragment instanceof SignupFragment) {
-                        return;
-                    }
-                    refrenceWrapper.getmFragmentCallingUtilsHandler().replaceAndCommitFragmentByAddingToBackStack(R.id.container, new SignupFragment(), this, true, "", false);
-                } else {
-                    AlertUtils.showToast(CreateAccountActivity.this, AppMessages.NO_INTERNET_AVAILABLE);
-                }
-
+                onButtonClick(false);
                 break;
-
             case R.id.btn_fb_signup:
                 if (refrenceWrapper.getmDeviceUtilHandler().isInternetOn(CreateAccountActivity.this) == true) {
                     facebooklogin();
@@ -122,7 +100,29 @@ public class CreateAccountActivity extends SocialMediaIntegration implements Vie
         }
     }
 
-    public void GotoLoginFragment() {
+    private void onButtonClick(boolean loginPagePush) {
+        if (refrenceWrapper.getmDeviceUtilHandler().isInternetOn(CreateAccountActivity.this) == true) {
+            CommonUtility.hideSoftKeyboard(CreateAccountActivity.this);
+            mFragment = refrenceWrapper.getmFragmentCallingUtilsHandler().getFragment(this, R.id.container);
+            if (loginPagePush) {
+                if (mFragment instanceof LoginFragment) {
+                    return;
+                }
+                LoginSignupLinearLayout.setVisibility(View.GONE);
+                refrenceWrapper.getmFragmentCallingUtilsHandler().replaceAndCommitFragmentByAddingToBackStack(R.id.container, new LoginFragment(), this, true, "", false);
+            } else {
+                LoginSignupLinearLayout.setVisibility(View.GONE);
+                if (mFragment instanceof SignupFragment) {
+                    return;
+                }
+                refrenceWrapper.getmFragmentCallingUtilsHandler().replaceAndCommitFragmentByAddingToBackStack(R.id.container, new SignupFragment(), this, true, "", false);
+            }
+        } else {
+            AlertUtils.showToast(CreateAccountActivity.this, AppMessages.NO_INTERNET_AVAILABLE);
+        }
+    }
+
+    public void gotoLoginFragment() {
         CommonUtility.hideSoftKeyboard(CreateAccountActivity.this);
         refrenceWrapper.getmFragmentCallingUtilsHandler().commitFragment(new SignupFragment(), this, true);
         LoginSignupLinearLayout.setVisibility(View.GONE);
@@ -131,7 +131,7 @@ public class CreateAccountActivity extends SocialMediaIntegration implements Vie
 
     @Override
     public void onBackPressed() {
-        Fragment frag = refrenceWrapper.getmFragmentCallingUtilsHandler().getFragment(this,R.id.container);
+        Fragment frag = refrenceWrapper.getmFragmentCallingUtilsHandler().getFragment(this, R.id.container);
         if (frag != null && frag instanceof SignupFragment) {
             refrenceWrapper.getmFragmentCallingUtilsHandler().commitFragment(new SignupFragment(), this, true);
             LoginSignupLinearLayout.setVisibility(View.VISIBLE);
