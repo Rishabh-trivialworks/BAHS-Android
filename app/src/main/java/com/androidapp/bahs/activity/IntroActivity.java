@@ -13,6 +13,7 @@ import com.androidapp.bahs.RefrenceWrapper;
 import com.androidapp.bahs.activity.base.BaseActivity;
 import com.androidapp.bahs.adapter.Intro_ViewPagerAdapter;
 
+
 public class IntroActivity extends BaseActivity implements View.OnClickListener {
     private ViewPager mViewPager;
     private View mIndicator0, indicator1, mIndicator2, mIndicator3;
@@ -70,6 +71,7 @@ public class IntroActivity extends BaseActivity implements View.OnClickListener 
         @Override
         public void onPageSelected(int position) {
             updateIndicators(position);
+
         }
 
     }
