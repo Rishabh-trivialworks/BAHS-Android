@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -15,11 +14,10 @@ import android.widget.TextView;
 import com.androidapp.bahs.R;
 import com.androidapp.bahs.RefrenceWrapper;
 import com.androidapp.bahs.activity.CreateAccountActivity;
+import com.androidapp.bahs.activity.IntroActivity;
 import com.androidapp.bahs.activity.base.BaseActivity;
 import com.androidapp.bahs.interfaces.OnVideoCompleteListener;
 import com.androidapp.bahs.utils.TextureVideoViewLoadHome;
-
-import java.io.IOException;
 
 
 /**
@@ -99,6 +97,8 @@ public class IntroFragment extends Fragment implements OnVideoCompleteListener {
 
     @Override
     public void onVideoComplete() {
-        mContext.activityCleanSwitcher(CreateAccountActivity.class);
+        if(infomation_page_position==3&& IntroActivity.currentpos==3){
+            mContext.activityCleanSwitcher(CreateAccountActivity.class);
+        }
     }
 }

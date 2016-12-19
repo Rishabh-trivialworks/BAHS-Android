@@ -123,7 +123,6 @@
             android:layout_marginRight="@dimen/thirty_dp"
             android:layout_marginTop="@dimen/twenty_dp"
             android:background="@drawable/gradient_background"
-            android:inputType="textCapCharacters"
             android:text="LOG IN"
             android:textColor="@color/white"
             android:textSize="@dimen/text16size" />

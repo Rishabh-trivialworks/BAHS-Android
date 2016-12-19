@@ -1,9 +1,8 @@
 package com.androidapp.bahs.activity;
 
 import android.content.Context;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -21,6 +20,8 @@ public class IntroActivity extends BaseActivity implements View.OnClickListener 
     private Button mSignUp;
     private RefrenceWrapper refrenceWrapper;
     private Context mContext;
+    public static int currentpos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +30,7 @@ public class IntroActivity extends BaseActivity implements View.OnClickListener 
         mContext = getApplicationContext();
         inItView();
     }
+
     public void inItView() {
         mViewPager = (ViewPager) findViewById(R.id.viewPager);
         mIndicator0 = (View) findViewById(R.id.indicator1);
@@ -71,7 +73,7 @@ public class IntroActivity extends BaseActivity implements View.OnClickListener 
         @Override
         public void onPageSelected(int position) {
             updateIndicators(position);
-
+            currentpos = position;
         }
 
     }

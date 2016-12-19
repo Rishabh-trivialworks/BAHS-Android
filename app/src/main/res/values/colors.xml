@@ -41,6 +41,7 @@
     <color name="txt_t_c">#9B9B9B</color>
     <color name="gray">#B7BBC0</color>
     <color name="heading_card">#A5A4A5</color>
-
+    <color name="light_green">#57A20A</color>
+    <color name="green_dark">#13904d</color>
 
 </resources>
