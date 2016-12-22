@@ -46,4 +46,23 @@
     <string name="medical">Medical</string>
     <string name="language">Language</string>
 
+    <!--rishabh after job activity-->
+    <string name="how_was_your_interview_for_nany_position">How was your interview for \n Nanny Position ?</string>
+    <string name="the_feedback_is_only_visible_to_admin">The feedback is only visible to admin</string>
+    <string name="additional_feedback">Additional Feedback(Optional)</string>
+
+    <string name="thanks_for_the_feedback">Thanks for the Feedback</string>
+    <string name="schedule_trail">SCHEDULE TRAIL ?</string>
+    <string name="continues">continue</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="find_more_staff">Find more staff ?</string>
+    <string name="thanks_for_scheduling_trail">Thanks for Scheduling a trial</string>
+    <string name="nick_name_alert_text">Nickname just recieved an alert \n and waiting for his/her confirmation</string>
+
+    <!--rishabh schedule trail activity-->
+    <string name="hourly_rate">Hourly Rate:$150/hr</string>
+    <string name="pick_a_time">PICK A TIME AND DATE</string>
+    <string name="option1">option 1: time and date</string>
+    <string name="option2">option 2: time and date</string>
 </resources>

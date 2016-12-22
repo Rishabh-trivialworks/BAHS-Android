@@ -13,7 +13,7 @@ public class ListJobActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_job_activity);
+        setContentView(R.layout.activity_list_job);
 
     }
 

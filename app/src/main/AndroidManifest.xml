@@ -59,6 +59,19 @@
         <activity android:name=".activity.ListJobActivity"
             android:screenOrientation="portrait"
             />
+
+        <activity android:name=".activity.AfterJobActivity"
+                  android:screenOrientation="portrait"
+        />
+        <activity android:name=".activity.AfterJobFeedbackActivity"
+                  android:screenOrientation="portrait"
+        />
+        <activity android:name=".activity.AfterJobScheduleTrailActivity"
+                  android:screenOrientation="portrait"
+        />
+        <activity android:name=".activity.ScheduleTrailActivity"
+                  android:screenOrientation="portrait"
+        />
     </application>
 
 </manifest>

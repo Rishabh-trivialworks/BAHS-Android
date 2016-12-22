@@ -17,6 +17,30 @@ public class HomeActivity extends BaseActivity {
     public void openListActivity(){
         startActivity(new Intent(this,ListJobActivity.class));
     }
+    @BindView(R.id.button6)
+    Button buttin6;
+    @OnClick(R.id.button6)
+    public void openAfterJobActivity(){
+        startActivity(new Intent(this,AfterJobActivity.class));
+    }
+    @BindView(R.id.button7)
+    Button buttin7;
+    @OnClick(R.id.button7)
+    public void openAfterJobFeedbackActivity(){
+        startActivity(new Intent(this,AfterJobFeedbackActivity.class));
+    }
+    @BindView(R.id.button8)
+    Button buttin8;
+    @OnClick(R.id.button8)
+    public void openScheduleTrailActivity(){
+        startActivity(new Intent(this,ScheduleTrailActivity.class));
+    }
+    @BindView(R.id.button9)
+    Button buttin9;
+    @OnClick(R.id.button9)
+    public void openAfterJobScheduleTrailActivity(){
+        startActivity(new Intent(this,AfterJobScheduleTrailActivity.class));
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
