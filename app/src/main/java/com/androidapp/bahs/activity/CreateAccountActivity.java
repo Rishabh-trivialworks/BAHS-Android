@@ -6,8 +6,6 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
@@ -31,12 +29,7 @@ import com.androidapp.bahs.service.utils.AlertUtils;
 import com.androidapp.bahs.service.utils.CommonUtility;
 import com.androidapp.bahs.utils.AppMessages;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
-import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class CreateAccountActivity extends SocialMediaIntegration implements View.OnClickListener, CommonInterface, SocialMediaInterface {
     private Button mFbLogin, mBtnSignup;
@@ -45,11 +38,7 @@ public class CreateAccountActivity extends SocialMediaIntegration implements Vie
     private LinearLayout LoginSignupLinearLayout;
     private TextView mLogintxt;
     private FrameLayout mFrameLayout;
-    @BindView(R.id.button1) Button buttin1;
-    @OnClick(R.id.button1)
-    public void openListActivity(){
-        startActivity(new Intent(this,ListJobActivity.class));
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

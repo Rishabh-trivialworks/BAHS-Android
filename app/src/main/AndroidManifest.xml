@@ -16,7 +16,7 @@
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity android:name=".activity.HomeActivity">
+        <activity android:name=".activity.SplashActivity">
 
         </activity>
 
@@ -29,8 +29,8 @@
             android:name=".firebase.RegistratinIntentService"
             android:exported="false" />
 
-        <activity android:name=".activity.SplashActivity"
-            android:theme="@style/AppTheme.NoActionBar"
+        <activity android:name=".activity.HomeActivity"
+                  android:screenOrientation="portrait"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
