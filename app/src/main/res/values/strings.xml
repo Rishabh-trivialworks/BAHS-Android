@@ -5,14 +5,45 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
-    <string name="forgot_password"><u>Forgot Password?</u></string>
     <string name="signup_t_c">By checking this box, you agree to BAHS Terms and Conditions and BAHS Privacy Policy</string>
-    <string name="lastname">Last Name</string>
-    <string name="firstname">First Name</string>
     <string name="btnname">SIGNUP</string>
     <string name="submit">SUBMIT</string>
     <string name="email_forgot">Enter your email and we\'ll send you the link to reset the password.</string>
+
+    <!-- rohit signup page string  -->
+    <string name="firstname">First Name</string>
+    <string name="lastname">Last Name</string>
+    <string name="nick_name_hint">Nickname</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="mailing_address">Mailing Address</string>
+    <string name="interview_location">Interview Location</string>
+    <string name="referred_by">Referred By</string>
+    <string name="upload_image">Upload Image</string>
+
+    <string name="forgot_password"><u>Forgot Password?</u></string>
+
+    <!-- rohit image uploading dialog -->
+    <string name="open_gallery">Open Gallery</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="what_is_the_service_that_s_needed">What is the service that\'s needed?</string>
+    <string name="schedule">Schedule</string>
+    <string name="permanent">Permanent</string>
+    <string name="full_time">Full Time</string>
+    <string name="part_time">Part Time  </string>
+    <string name="mornings">Mornings</string>
+    <string name="weekdays">Weekdays</string>
+    <string name="evenings">Evenings</string>
+    <string name="overtime">Overtime</string>
+    <string name="temporary">Temporary</string>
+    <string name="live_in">Live in</string>
+    <string name="hours">Hours</string>
+    <string name="salary">Salary</string>
+    <string name="yearly">Yearly</string>
+    <string name="start_date">Start date</string>
+    <string name="medical">Medical</string>
+    <string name="language">Language</string>
 
 </resources>

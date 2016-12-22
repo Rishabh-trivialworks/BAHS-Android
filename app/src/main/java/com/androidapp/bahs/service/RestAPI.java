@@ -4,6 +4,7 @@ import com.androidapp.bahs.service.ds.response.ListModel;
 import com.androidapp.bahs.service.ds.response.LoginModel;
 import com.androidapp.bahs.service.ds.response.LoginRequest;
 import com.androidapp.bahs.service.ds.response.LoginResponse;
+import com.androidapp.bahs.service.ds.response.RegisterDetail;
 import com.androidapp.bahs.service.ds.response.RegisterModel;
 import com.androidapp.bahs.service.utils.Constants;
 
@@ -15,6 +16,7 @@ import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
@@ -45,5 +47,34 @@ public interface RestAPI {
     //Example getJson
     @POST(Constants.ServiceConstants.REGISTER)
     Callback<LoginResponse> log_in(@Body LoginRequest login_request, CustomCallBacks<LoginResponse> customCallBacks);
+
+    @FormUrlEncoded
+    @POST(Constants.ServiceConstants.TEST_REGISTER)
+    Call<Object> signUp(@Field("first_name") String first_name,
+                        @Field("last_name") String last_name,
+                        @Field("email") String email,
+                        @Field("password") String password,
+                        @Field("device_type") String device_type,
+                        @Field("device_id") String device_id,
+                        @Field("device_token") String device_token)
+            ;
+
+
+    @POST(Constants.ServiceConstants.TEST_REGISTER)
+    Call<Object> signUpNew(@Body RegisterDetail registerDetail );
+
+
+    @Headers({
+            "Accept-Encoding:gzip, deflate",
+            "Accept-Language:en;q=1",
+            "AccessToken:Q2zvy2BKVXdmnaT9tqetDqpi6S4B2iFJ",
+            "AppVersion:1.0(20)",
+            "Content-Length:22",
+
+    })
+    @FormUrlEncoded
+    @POST(Constants.ServiceConstants.TEST_REGISTER)
+    Call<Object> postTesting(@Field("with_user_id") String password);
+
 }
 

@@ -1,8 +1,13 @@
 package com.androidapp.bahs.fragment;
 
+import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.text.Editable;
@@ -21,18 +26,34 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.androidapp.bahs.R;
 import com.androidapp.bahs.RefrenceWrapper;
 import com.androidapp.bahs.activity.CreateAccountActivity;
+import com.androidapp.bahs.interfaces.ImageUploadingListener;
+import com.androidapp.bahs.service.ds.response.RegisterDetail;
+import com.androidapp.bahs.service.ds.response.RegisterModel;
 import com.androidapp.bahs.service.utils.AlertUtils;
 import com.androidapp.bahs.service.utils.CommonUtility;
 import com.androidapp.bahs.service.utils.StringUtils;
 import com.androidapp.bahs.utils.AppMessages;
+import com.androidapp.bahs.utils.ImageUploadingDialog;
+import com.androidapp.bahs.utils.ServiceCallsUtils;
+import com.androidapp.bahs.utils.Syso;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.concurrent.TimeUnit;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 
-public class SignupFragment extends Fragment implements View.OnClickListener {
+public class SignupFragment extends Fragment implements View.OnClickListener,ImageUploadingListener {
     private TextView mTxtError, mTxtCheckBox, mTextsignup,mLogintxt;
     private EditText mFirstNameEditText, mLastNameEditText, mEmailEditText, mPasswordEditText;
     private Button mBtnRegister;
@@ -41,7 +62,13 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
     private RefrenceWrapper refrenceWrapper;
     private LinearLayout mLinearLayoutInsideScrollView;
     private View mRootView;
+    private RelativeLayout mUploadImageRL;
     private boolean mTermsAndCondition=true;
+    public static SignupFragment signupFragment;
+    private int SELECT_IMAGE=1000;
+
+    @BindView(R.id.img_profile)
+    ImageView profileImage;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,9 +76,11 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
         mRootView = inflater.inflate(R.layout.fragment_signup, container, false);
         mCreateAccountActivity = (CreateAccountActivity) getActivity();
         refrenceWrapper = RefrenceWrapper.getRefrenceWrapper(getActivity());
+        ButterKnife.bind(this,mRootView);
         initUI(mRootView);
         setLoginTxtColor();
         acceptTermsAndCondition(mTermsAndCondition);
+        signupFragment=this;
         //refrenceWrapper.getFontTypeFace().setRobotoThinTypeFace(getActivity(), mFirstNameEditText, mLastNameEditText, mEmailEditText, mPasswordEditText, mBtnRegister, mTxtError, mTxtCheckBox, mTextsignup,mLogintxt);
         return mRootView;
     }
@@ -72,6 +101,7 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
         mImgPassword = (ImageView) rootView.findViewById(R.id.img_password);
         mBtnRegister = (Button) rootView.findViewById(R.id.btn_register);
         mLogintxt = (TextView) rootView.findViewById(R.id.login_txt);
+        mUploadImageRL=(RelativeLayout)rootView.findViewById(R.id.uploadImageRL);
 //        mTxt_or_join = (TextView) rootView.findViewById(R.id.txt_join);
         //mBtnFacebook = (Button) rootView.findViewById(R.id.btn_fb_signup);
         mLinearLayoutInsideScrollView = (LinearLayout) rootView.findViewById(R.id.linearlayoutInsideScrollView);
@@ -94,7 +124,7 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
     }
     private void setListeners() {
         mBtnRegister.setOnClickListener(this);
-
+        mUploadImageRL.setOnClickListener(this);
         setTextChangeListener(mFirstNameEditText);
         setTextChangeListener(mLastNameEditText);
         setTextChangeListener(mEmailEditText);
@@ -125,6 +155,7 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
                 call_ime_action();
                 addTextChangeListener(mImgPassword, mPasswordEditText, R.drawable.lock, R.drawable.lock_filled, 6);
                 break;
+
         }
     }
     private void setFocusChangeListener(final EditText editText) {
@@ -225,9 +256,17 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
                     acceptTermsAndCondition(mTermsAndCondition);
                 }
                 break;
+            case R.id.uploadImageRL:
+                openImageUpLoadingDialog();
+                break;
         }
     }
     private void doSignUp() {
+
+        ServiceCallsUtils serviceCallsUtils=new ServiceCallsUtils();
+        serviceCallsUtils.doRegistration(getActivity(),"","","","","","","");
+        //serviceCallsUtils.doTesting(getActivity());
+  //      getDataFromArraryList();
         String firstName = mFirstNameEditText.getText().toString();
         String lastName = mLastNameEditText.getText().toString();
         String email = mEmailEditText.getText().toString();
@@ -263,6 +302,7 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
 
         if (refrenceWrapper.getmDeviceUtilHandler().isInternetOn(getActivity()) == true) {
                // service call logic goes here
+
         } else {
             AlertUtils.showToast(getActivity(),AppMessages.NO_INTERNET_AVAILABLE);
             return;
@@ -279,4 +319,52 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
         }
 
 
+    private void getDataFromArraryList(){
+
+        ArrayList<String> names=new ArrayList<>();
+        names.add("Eve");
+        names.add("Anna");
+        names.add("Tonny");
+        names.add("Steve");
+
+
+
+        ArrayList<RegisterDetail> regdetail=new ArrayList<>();
+
+        for(int i=0;i<5;i++){
+            RegisterDetail registerModel=new RegisterDetail("test"+i,"lTest","testdsds2@yupmIL.COM","qwerty1","Android","32ndsfsd34y234nglgjdf746","653454hsdffdy234nglgjdf746");
+            regdetail.add(registerModel);
+        }
+
+        for(String name:names){
+            System.out.println(name);
+        }
+
+        for(RegisterDetail name:regdetail){
+            System.out.println(name.getFirst_name());
+        }
+
+        System.out.println("Using Iterator");
+        Iterator iterator = regdetail.iterator();
+        while (iterator.hasNext()) {
+            RegisterDetail registerDetail=(RegisterDetail) iterator.next();
+            System.out.println(registerDetail.getFirst_name());
+        }
+    }
+
+    private void openImageUpLoadingDialog(){
+        RefrenceWrapper.getRefrenceWrapper(getActivity()).getImageUploadingHandler().show(getFragmentManager(),"tag");
+    }
+
+
+
+    @Override
+    public void onSuccess(Bitmap bitmap) {
+        profileImage.setImageBitmap(bitmap);
+    }
+
+    @Override
+    public void onFailure() {
+
+    }
 }

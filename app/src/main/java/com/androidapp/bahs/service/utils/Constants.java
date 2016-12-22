@@ -56,13 +56,14 @@ public class Constants {
         String BLOCK_USER = "/user/blockanotheruser";
         String UNBLOCK_USER = "/user/unblockanotheruser";
 
+        String TEST_REGISTER="users/signupemail";//"viewsharedtosongs?page=1";
 
     }
 
     public interface WebConstants {
 
         String LISTING ="http://www.androidbegin.com/tutorial/";
-        String BASE_URL_CONSTANT="http://spotpog.mobikasa.net/api/v3/";
+        String BASE_URL_CONSTANT="http://cardamom-live.mobikasa.net/api/v1/";//"http://app.getadue.com/api/v1/users/";//
         int NETWORK_ERROR = 10000;
         int FAILED_ERROR = 10001;
         String INVALID_RESPONSE_MESSAGE = "Invalid reposne from server. Please try again later.";

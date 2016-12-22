@@ -11,12 +11,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.androidapp.bahs.fragment.SignupFragment;
 import com.androidapp.bahs.service.RestAPI;
 import com.androidapp.bahs.service.utils.Constants;
 import com.androidapp.bahs.service.utils.DeviceUtils;
 import com.androidapp.bahs.service.utils.StringUtils;
+import com.androidapp.bahs.utils.DateTimeUtils;
 import com.androidapp.bahs.utils.FragmentActivityUtils;
 import com.androidapp.bahs.utils.FragmentCallingUtils;
+import com.androidapp.bahs.utils.ImageUploadingDialog;
 import com.androidapp.bahs.utils.PictureUtils;
 import com.androidapp.bahs.utils.ServiceCallsUtils;
 import com.androidapp.bahs.utils.TableUtils;
@@ -35,6 +38,8 @@ public class RefrenceWrapper {
     private DeviceUtils mDeviceUtilHandler;
     private PictureUtils mPictureUtilHandler;
     private TableUtils mTableUtilHandler;
+    private DateTimeUtils mDateTimeUtils;
+    private ImageUploadingDialog mImageUploadingDialog;
     private FragmentCallingUtils mFragmentCallingUtilsHandler;
     private FragmentActivityUtils mFragmentActivityUtils;
     private ServiceCallsUtils mServiceCallHandler;
@@ -165,6 +170,21 @@ public class RefrenceWrapper {
             mTableUtilHandler = new TableUtils();
         }
         return mTableUtilHandler;
+    }
+
+    public DateTimeUtils getDateTimeUtilHandler(){
+        if(mDateTimeUtils==null){
+            mDateTimeUtils=new DateTimeUtils();
+        }
+        return mDateTimeUtils;
+    }
+
+
+    public ImageUploadingDialog getImageUploadingHandler(){
+        if(mImageUploadingDialog==null){
+            mImageUploadingDialog=new ImageUploadingDialog();
+        }
+        return mImageUploadingDialog;
     }
 
 
