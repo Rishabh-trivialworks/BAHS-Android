@@ -46,4 +46,35 @@
     <string name="medical">Medical</string>
     <string name="language">Language</string>
 
+    <!-- purnendu offer position-->
+    <string name="comma">,</string>
+    <string name="age">50</string>
+    <string name="job_time">Full Time/Monday-Friday/Weekends</string>
+    <string name="job_place">New York City,NY</string>
+    <string name="job_wages">$150/hr</string>
+    <string name="job_detail">Cooking for Children,Light Housekeeping,Twin Experience,Arts Crafts,Reading,Sleep Traning</string>
+    <string name="view_more">View More</string>
+    <string name="offer_expire">Offer Will be Expire in</string>
+    <string name="days">days</string>
+    <string name="compentation">Compentation</string>
+    <string name="hourly">Hourly</string>
+    <string name="offer_period">Offer Period</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="fromto">From-To</string>
+    <string name="nickname">Nick Name</string>
+    <string name="billing_address">Billing Address</string>
+    <string name="pnone">Phone Number</string>
+    <string name="title_upload_picture">Upload Picture</string>
+    <string name="seeking">I am seeking:</string>
+    <string name="seeking_job">A Job</string>
+    <string name="seeking_service">A Service</string>
+    <string name="first_name">What is Your First Name?</string>
+    <string name="what_is_last_name">What is Your Last Name?</string>
+    <string name="nick_name">What is Your Nick Name?</string>
+    <string name="what_is_billing_address">What is Your Billing Address?</string>
+    <string name="what_is_phone_number">What is Your Phone Number?</string>
+
+
+
 </resources>
