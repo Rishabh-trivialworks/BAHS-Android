@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:weightSum="1">
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  android:layout_weight=".7"
+                  android:orientation="vertical">
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/ten_dp"
+                  android:gravity="center"
+                  android:text="@string/hourly_rate"
+                  android:textColor="@color/black"
+        />
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/fifteen_dp"
+                  android:gravity="center"
+                  android:text="@string/pick_a_time"
+        />
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/fifteen_dp"
+                  android:gravity="center"
+                  android:text="@string/option1"
+        />
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="@dimen/margin_48"
+                  android:layout_marginLeft="@dimen/margin_80"
+                  android:layout_marginRight="@dimen/margin_80"
+                  android:layout_marginTop="@dimen/ten_dp"
+                  android:background="@drawable/relative_layout_white_border"
+                  android:gravity="center"
+                  android:text="01/01 - 01/02"
+        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_48"
+            android:layout_marginLeft="@dimen/twenty_dp"
+            android:layout_marginRight="@dimen/twenty_dp"
+            android:layout_marginTop="@dimen/margin_10"
+            android:orientation="horizontal"
+            android:weightSum="1"
+        >
+
+            <TextView android:layout_width="match_parent"
+                      android:layout_height="@dimen/margin_48"
+                      android:layout_marginRight="@dimen/margin_5"
+                      android:layout_weight="0.5"
+                      android:background="@drawable/relative_layout_white_border"
+                      android:gravity="center"
+                      android:text="8:00 AM"
+            />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/three_dp"
+                android:layout_marginRight="@dimen/three_dp"
+                android:gravity="center"
+                android:text="to"
+            />
+
+            <TextView android:layout_width="match_parent"
+                      android:layout_height="@dimen/margin_48"
+                      android:layout_marginLeft="@dimen/margin_5"
+                      android:layout_weight="0.5"
+                      android:background="@drawable/relative_layout_white_border"
+                      android:gravity="center"
+                      android:text="9:00 AM"
+            />
+        </LinearLayout>
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/ten_dp"
+                  android:gravity="center"
+                  android:text="@string/option2"
+        />
+        <TextView android:id="@+id/textView2"
+                  android:layout_width="match_parent"
+                  android:layout_height="@dimen/margin_48"
+                  android:layout_marginLeft="@dimen/margin_80"
+                  android:layout_marginRight="@dimen/margin_80"
+                  android:layout_marginTop="@dimen/ten_dp"
+                  android:background="@drawable/relative_layout_white_border"
+                  android:gravity="center"
+                  android:text="01/03 - 01/04"/>
+
+    </LinearLayout>
+    <View android:layout_width="match_parent"
+          android:layout_height="8dp"
+          android:background="@color/grey">/
+    </View>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  android:layout_margin="@dimen/ten_dp"
+                  android:layout_weight=".3"
+                  android:orientation="vertical">
+
+
+    </LinearLayout>
+
+</LinearLayout>
