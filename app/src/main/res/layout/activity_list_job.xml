@@ -36,6 +36,21 @@
                     android:background="@drawable/relative_layout_border"
                     >
 
+                    <ImageView
+                        android:id="@+id/downArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:padding="@dimen/margin_10"
+                        android:src="@drawable/ic_down_arrow"
+                        />
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:layout_toLeftOf="@+id/downArrow"
+                        android:background="@color/grey"
+                        />
 
                 </RelativeLayout>
             </LinearLayout>
@@ -51,8 +66,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginLeft="-5dp"
+                android:orientation="horizontal"
                 android:weightSum="1"
                 >
 
@@ -163,8 +178,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="@dimen/margin_10"
+                android:orientation="horizontal"
                 android:weightSum="1"
                 >
 
@@ -181,7 +196,6 @@
                         android:layout_height="wrap_content"
                         android:text="@string/overtime"
                         />
-
 
 
                 </LinearLayout>
@@ -246,6 +260,7 @@
                         />
                 </LinearLayout>
             </LinearLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -255,33 +270,33 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/margin_48"
+                android:layout_marginTop="@dimen/margin_5"
                 android:orientation="horizontal"
                 android:weightSum="1"
-                android:layout_marginTop="@dimen/margin_5"
                 >
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/margin_48"
-                    android:layout_weight="0.5"
                     android:layout_marginRight="@dimen/margin_5"
+                    android:layout_weight="0.5"
                     android:background="@drawable/relative_layout_border"
                     ></RelativeLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="to"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:gravity="center"
+                    android:text="to"
                     />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/margin_48"
-                    android:layout_weight="0.5"
                     android:layout_marginLeft="@dimen/margin_5"
+                    android:layout_weight="0.5"
                     android:background="@drawable/relative_layout_border"
                     ></RelativeLayout>
             </LinearLayout>
@@ -289,15 +304,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/salary"
                 android:layout_marginTop="@dimen/margin_10"
+                android:text="@string/salary"
                 />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="@dimen/margin_10"
+                android:orientation="horizontal"
                 android:weightSum="1"
                 >
 
@@ -314,7 +329,6 @@
                         android:layout_height="wrap_content"
                         android:text="@string/overtime"
                         />
-
 
 
                 </LinearLayout>
@@ -340,53 +354,54 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/margin_48"
+                android:layout_marginTop="@dimen/margin_5"
                 android:orientation="horizontal"
                 android:weightSum="1"
-                android:layout_marginTop="@dimen/margin_5"
                 >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Min"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="@dimen/margin_10"
                     android:gravity="center"
+                    android:text="Min"
                     />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/margin_48"
-                    android:layout_weight="0.5"
                     android:layout_marginRight="@dimen/margin_5"
+                    android:layout_weight="0.5"
                     android:background="@drawable/relative_layout_border"
                     ></RelativeLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Max"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="@dimen/margin_10"
                     android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginRight="@dimen/margin_10"
                     android:gravity="center"
+                    android:text="Max"
                     />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/margin_48"
-                    android:layout_weight="0.5"
                     android:layout_marginLeft="@dimen/margin_5"
+                    android:layout_weight="0.5"
                     android:background="@drawable/relative_layout_border"
                     ></RelativeLayout>
             </LinearLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/start_date"
                 android:layout_marginTop="@dimen/margin_10"
+                android:text="@string/start_date"
                 />
 
             <RelativeLayout
@@ -401,14 +416,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Benefits"
                 android:layout_marginTop="@dimen/margin_10"
+                android:text="Benefits"
                 />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="@dimen/margin_10"
+                android:orientation="horizontal"
                 android:weightSum="1"
                 >
 
@@ -425,7 +441,6 @@
                         android:layout_height="wrap_content"
                         android:text="401k"
                         />
-
 
 
                 </LinearLayout>
@@ -447,34 +462,71 @@
 
                 </LinearLayout>
             </LinearLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/margin_48"
                 android:layout_weight="0.5"
 
                 android:background="@drawable/relative_layout_border"
-                ></RelativeLayout>
+                >
+
+                <ImageView
+                    android:id="@+id/downArrowBenifits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:padding="@dimen/margin_10"
+                    android:src="@drawable/ic_down_arrow"
+                    />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/downArrowBenifits"
+                    android:background="@color/grey"
+                    />
+
+
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/margin_48"
-                android:layout_weight="0.5"
                 android:layout_marginTop="@dimen/margin_20"
+                android:layout_weight="0.5"
                 android:background="@drawable/relative_layout_border"
-                ></RelativeLayout>
+                >
+
+                <ImageView
+                    android:id="@+id/educationIV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:padding="@dimen/margin_10"
+                    android:src="@drawable/ic_down_arrow"
+                    />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/educationIV"
+                    android:background="@color/grey"
+                    />
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Travel Required"
                 android:layout_marginTop="@dimen/margin_10"
+                android:text="Travel Required"
                 />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginLeft="-5dp"
+                android:orientation="horizontal"
                 android:weightSum="1"
                 >
 
@@ -486,20 +538,20 @@
                     >
 
                     <CheckBox
-                        android:id="@+id/permanentCB"
+                        android:id="@+id/longTerrmCB"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/permanent"
+                        android:text="@string/long_term"
                         />
 
 
                     <CheckBox
-                        android:id="@+id/temporaryCB"
+                        android:id="@+id/domesticCB"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toLeftOf="@+id/temporaryTV"
+                        android:layout_toLeftOf="@+id/longterrmCB"
                         android:layout_weight="0.5"
-                        android:text="@string/full_time"
+                        android:text="@string/domestic"
                         />
 
                 </LinearLayout>
@@ -512,19 +564,19 @@
                     >
 
                     <CheckBox
-                        android:id="@+id/fullTimeCB"
+                        android:id="@+id/shortTermCB"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/temporary"
+                        android:text="@string/short_term"
                         />
 
                     <CheckBox
-                        android:id="@+id/partTimeCB"
+                        android:id="@+id/internationalCB"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toLeftOf="@+id/partTimeTV"
+                        android:layout_toLeftOf="@+id/shortTermCB"
                         android:layout_weight="0.5"
-                        android:text="@string/part_time"
+                        android:text="@string/international"
                         />
 
                 </LinearLayout>
@@ -533,15 +585,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/language"
                 android:layout_marginTop="@dimen/margin_10"
+                android:text="@string/language"
                 />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginLeft="-5dp"
+                android:orientation="horizontal"
                 android:weightSum="1"
                 >
 
@@ -596,11 +648,12 @@
 
                 </LinearLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginLeft="-5dp"
+                android:orientation="horizontal"
                 android:weightSum="1"
                 >
 
@@ -657,6 +710,195 @@
             </LinearLayout>
 
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_60"
+                android:layout_marginRight="@dimen/margin_40"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_weight="0.5"
+                android:background="@drawable/relative_layout_border"
+                ></RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:text="@string/driver_license"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-5dp"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical"
+                    >
+
+                    <CheckBox
+                        android:id="@+id/yesCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/yes"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical"
+                    >
+
+                    <CheckBox
+                        android:id="@+id/noCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/no"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:text="Pet Friendly"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-5dp"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical"
+                    >
+
+                    <CheckBox
+                        android:id="@+id/dogCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dog"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical"
+                    >
+
+                    <CheckBox
+                        android:id="@+id/catCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cat"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:text="@string/job_duties"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_60"
+                android:layout_marginRight="@dimen/margin_40"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_weight="0.5"
+                android:background="@drawable/relative_layout_border"
+                ></RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:text="@string/experience_required"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_48"
+                android:layout_marginRight="@dimen/margin_40"
+                android:background="@drawable/relative_layout_border"
+                >
+
+                <ImageView
+                    android:id="@+id/experienceIV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:padding="@dimen/margin_10"
+                    android:src="@drawable/ic_down_arrow"
+                    />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/experienceIV"
+                    android:background="@color/grey"
+                    />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:text="@string/skill_characteristics_required"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_60"
+                android:layout_marginRight="@dimen/margin_40"
+                android:layout_weight="0.5"
+                android:background="@drawable/relative_layout_border"
+                ></RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_30"
+                android:layout_marginTop="@dimen/margin_20"
+                android:orientation="horizontal"
+                >
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/sixty_dp"
+                    android:layout_marginRight="@dimen/ten_dp"
+
+                    android:background="@drawable/relative_layout_white_border"
+                    android:text="@string/submit"
+                    />
+
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

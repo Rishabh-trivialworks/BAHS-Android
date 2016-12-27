@@ -21,6 +21,14 @@ public class HomeActivity extends BaseActivity {
     public void openListActivity(){
         startActivity(new Intent(this,ListJobActivity.class));
     }
+
+    @BindView(R.id.button3)
+    Button button3;
+    @OnClick(R.id.button3)
+    public void openFindStaffingActivity(){
+        startActivity(new Intent(this,FindStaffingActivity.class));
+    }
+
     @OnClick(R.id.button11)
     public void openOfferPositionActivity(){startActivity(new Intent(this,OfferPositionActivity.class));}
     @OnClick(R.id.button2)

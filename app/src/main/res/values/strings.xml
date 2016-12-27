@@ -96,4 +96,14 @@
     <string name="pick_a_time">PICK A TIME AND DATE</string>
     <string name="option1">option 1: time and date</string>
     <string name="option2">option 2: time and date</string>
+    <string name="long_term">Long Term</string>
+    <string name="domestic">Domestic</string>
+    <string name="short_term">Short Term</string>
+    <string name="international">International</string>
+    <string name="driver_license">Driver License</string>
+    <string name="dog">Dog</string>
+    <string name="cat">Cat</string>
+    <string name="job_duties">Job duties</string>
+    <string name="experience_required">Experience Required</string>
+    <string name="skill_characteristics_required">Skill/Characteristics Required</string>
 </resources>
