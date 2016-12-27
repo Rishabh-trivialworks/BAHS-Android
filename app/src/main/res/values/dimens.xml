@@ -58,6 +58,6 @@
     <dimen name="margin_4">4dp</dimen>
     <dimen name="margin_50">50dp</dimen>
     <dimen name="margin_55">55dp</dimen>
-
+    <dimen name="margin_60">60dp</dimen>
 
 </resources>

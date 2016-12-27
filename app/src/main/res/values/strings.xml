@@ -110,4 +110,14 @@
     <string name="save_your_credit_card">SAVE YOUR CREDIT CARD \n TO FASTEN THE PROCESS NEXT TIME</string>
     <string name="may_be_next_time">May be,next time</string>
     <string name="save">save</string>
+    <string name="long_term">Long Term</string>
+    <string name="domestic">Domestic</string>
+    <string name="short_term">Short Term</string>
+    <string name="international">International</string>
+    <string name="driver_license">Driver License</string>
+    <string name="dog">Dog</string>
+    <string name="cat">Cat</string>
+    <string name="job_duties">Job duties</string>
+    <string name="experience_required">Experience Required</string>
+    <string name="skill_characteristics_required">Skill/Characteristics Required</string>
 </resources>
