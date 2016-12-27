@@ -96,4 +96,18 @@
     <string name="pick_a_time">PICK A TIME AND DATE</string>
     <string name="option1">option 1: time and date</string>
     <string name="option2">option 2: time and date</string>
+
+    <!--rishabh Payment page activity-->
+
+    <string name="gold_membership">Gold Membership</string>
+    <string name="amount_to_pay">Amount to pay</string>
+    <string name="card_no.">Card Number</string>
+    <string name="expiration_date">Expiration Date</string>
+    <string name="cvv">CVV</string>
+    <string name="billing_postal_code">Billing Postal Code</string>
+    <string name="confirm_payment">Confirm Payment</string>
+    <string name="your_silver_pack">Your silver package subscription fee \n was successfull</string>
+    <string name="save_your_credit_card">SAVE YOUR CREDIT CARD \n TO FASTEN THE PROCESS NEXT TIME</string>
+    <string name="may_be_next_time">May be,next time</string>
+    <string name="save">save</string>
 </resources>
