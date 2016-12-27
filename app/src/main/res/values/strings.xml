@@ -8,6 +8,7 @@
     <string name="signup_t_c">By checking this box, you agree to BAHS Terms and Conditions and BAHS Privacy Policy</string>
     <string name="btnname">SIGNUP</string>
     <string name="submit">SUBMIT</string>
+    <string name="buy">BUY</string>
     <string name="email_forgot">Enter your email and we\'ll send you the link to reset the password.</string>
 
     <!-- rohit signup page string  -->
@@ -74,7 +75,9 @@
     <string name="nick_name">What is Your Nick Name?</string>
     <string name="what_is_billing_address">What is Your Billing Address?</string>
     <string name="what_is_phone_number">What is Your Phone Number?</string>
-
+    <string name="membership">Silver Membership</string>
+<string name="view_favorites">View Favorites</string>
+    <string name="history">History</string>
 
 
     <!--rishabh after job activity-->

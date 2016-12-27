@@ -60,27 +60,29 @@
         <activity
             android:name=".activity.ListJobActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.OfferPositionActivity"
-            android:windowSoftInputMode="stateUnchanged"
-            />
-        <activity android:name=".activity.AboutMeActivity"></activity>
-
-
-        <activity android:name=".activity.AfterJobActivity"
-                  android:screenOrientation="portrait"
-        />
-        <activity android:name=".activity.AfterJobFeedbackActivity"
-                  android:screenOrientation="portrait"
-        />
-        <activity android:name=".activity.AfterJobScheduleTrailActivity"
-                  android:screenOrientation="portrait"
-        />
-        <activity android:name=".activity.ScheduleTrailActivity"
-                  android:screenOrientation="portrait"
-        />
-        <activity android:name=".activity.FindStaffingActivity"
-                  android:screenOrientation="portrait"
-            />
+        <activity
+            android:name=".activity.OfferPositionActivity"
+            android:windowSoftInputMode="stateUnchanged" />
+        <activity android:name=".activity.AboutMeActivity" />
+        <activity
+            android:name=".activity.AfterJobActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AfterJobFeedbackActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AfterJobScheduleTrailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ScheduleTrailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FindStaffingActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.ProfileActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.ChangeMembershipActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

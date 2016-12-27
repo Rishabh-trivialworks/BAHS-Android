@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="2dp"
+        android:layout_margin="@dimen/margin_5"
+        android:padding="@dimen/margin_5"
+        >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TextView
+                android:text="PLATINUM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/membership_type_textView"
+                android:textSize="@dimen/text16size"
+                android:layout_marginLeft="@dimen/margin_10"
+                />
+
+            <TextView
+                android:text="10 interview with the three month membership"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/membership_desc_textView"
+                android:layout_marginRight="@dimen/margin_20"
+                android:layout_marginLeft="@dimen/margin_20"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:text="$300/month for three month +8.5% fee paid by ACH"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/membership_cost_textView"
+            android:layout_marginRight="@dimen/margin_50"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="@dimen/margin_10"
+            />
+        <TextView
+            android:text="@string/view_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/view_more_textView"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:textSize="@dimen/textsize_normal"
+            android:drawablePadding="@dimen/margin_5"
+            android:drawableLeft="@android:drawable/ic_menu_add"
+            android:layout_marginTop="@dimen/margin_10"
+            android:gravity="center"
+            />
+        <Button
+            android:id="@+id/btn_buy"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_48"
+            android:background="@drawable/relative_layout_border"
+            android:text="@string/buy"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:layout_marginLeft="@dimen/margin_20"
+            android:layout_marginRight="@dimen/margin_20"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

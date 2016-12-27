@@ -58,6 +58,18 @@ public class HomeActivity extends BaseActivity {
     public void openAfterJobScheduleTrailActivity(){
         startActivity(new Intent(this,AfterJobScheduleTrailActivity.class));
     }
+    @BindView(R.id.button12)
+    Button buttin12;
+    @OnClick(R.id.button12)
+    public void openChangeMembershipActivity(){
+        startActivity(new Intent(this,ChangeMembershipActivity.class));
+    }
+    @BindView(R.id.button13)
+    Button buttin13;
+    @OnClick(R.id.button13)
+    public void openProfilepActivity(){
+        startActivity(new Intent(this,ProfileActivity.class));
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

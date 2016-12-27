@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <TextView
+            android:text="To shedule interviews, trial and offer jobs.\nPick a package that suits you best."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/description_textView"
+            android:textSize="@dimen/text16size"
+            android:gravity="center"
+            android:layout_margin="@dimen/margin_10"
+            />
+<View
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/one_dp"
+    android:background="@color/grey"></View>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/changeMembershipRV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>
