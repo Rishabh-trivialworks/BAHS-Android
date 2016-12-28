@@ -8,6 +8,7 @@ import android.widget.RelativeLayout;
 
 import com.androidapp.bahs.RefrenceWrapper;
 import com.androidapp.bahs.service.CustomCallBacks;
+import com.androidapp.bahs.service.bean.UserModel;
 import com.androidapp.bahs.service.db.AppSharedPreferences;
 import com.androidapp.bahs.service.db.DatabaseHelper;
 import com.androidapp.bahs.service.ds.response.LoginModel;
@@ -23,6 +24,7 @@ import org.json.JSONObject;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
@@ -87,20 +89,33 @@ public class ServiceCallsUtils {
         return gson.fromJson(jsonString, classType);
     }
 
-    public void doRegistration(final FragmentActivity mFragmentActivity,String firstName,String lastName,
-                               String email,String password,String deviceType,String deviceID,String deviceToken){
+    public void doTesting(final FragmentActivity mFragmentActivity){
         refrenceWrapper = RefrenceWrapper.getRefrenceWrapper(mFragmentActivity);
-        RegisterDetail registerModel=new RegisterDetail("test","lTest","testdsds2@yupmIL.COM","qwerty1","Android","32ndsfsd34y234nglgjdf746","653454hsdffdy234nglgjdf746");
-
-        Call<Object> call=refrenceWrapper.getService().signUpNew(registerModel); //signUp("test","lTest","testdsds2@yupmIL.COM","qwerty1","Android","32ndsfsd34y234nglgjdf746","653454hsdffdy234nglgjdf746");
-
-        call.enqueue(new CustomCallBacks<Object>(mFragmentActivity,true) {
+        Call<Object> call=refrenceWrapper.getService().postTesting("339");
+        call.enqueue(new Callback<Object>() {
             @Override
-            public void onSucess(Call<Object> call, Response<Object> response) {
-               // AlertUtils.showSnackBar(mFragmentActivity, "User Name=" + response.body().getUser().toString());
-                Syso.debug("Response----","response---success-"+response.body()+"---");
+            public void onResponse(Call<Object> call, Response<Object> response) {
+
             }
 
+            @Override
+            public void onFailure(Call<Object> call, Throwable t) {
+
+            }
+        });
+    }
+
+    public void doRegistration(final FragmentActivity mFragmentActivity,String firstName,String lastName, String email,String password,String deviceType,String deviceID,String deviceToken){
+        refrenceWrapper = RefrenceWrapper.getRefrenceWrapper(mFragmentActivity);
+        UserModel userModel=new UserModel("test","lTest","testdsds2@yupmIL.COM","qwerty1","Android","32ndsfsd34y234nglgjdf746","653454hsdffdy234nglgjdf746","","","","");
+        Call<UserModel> call=refrenceWrapper.getService().signUpNew(userModel); //signUp("test","lTest","testdsds2@yupmIL.COM","qwerty1","Android","32ndsfsd34y234nglgjdf746","653454hsdffdy234nglgjdf746");
+        call.enqueue(new CustomCallBacks<UserModel>(mFragmentActivity,true) {
+            @Override
+            public void onSucess(Call<UserModel> call, Response<UserModel> response) {
+                // AlertUtils.showSnackBar(mFragmentActivity, "User Name=" + response.body().getUser().toString());
+                Syso.debug("Response----","response---success-"+response.body()+"---"+response.headers());
+
+            }
             @Override
             public void onFailure(Throwable arg0) {
                 //AlertUtils.showSnackBar(mFragmentActivity, arg0.getMessage(), view);
@@ -110,23 +125,6 @@ public class ServiceCallsUtils {
 
     }
 
-    public void doTesting(final FragmentActivity mFragmentActivity){
-        refrenceWrapper = RefrenceWrapper.getRefrenceWrapper(mFragmentActivity);
-        Call<Object> call=refrenceWrapper.getService().postTesting("339");
-        call.enqueue(new CustomCallBacks<Object>(mFragmentActivity,true) {
-            @Override
-            public void onSucess(Call<Object> call, Response<Object> response) {
-                // AlertUtils.showSnackBar(mFragmentActivity, "User Name=" + response.body().getUser().toString());
-                Log.d("Response----","response---success-"+response.body()+"---");
-            }
 
-            @Override
-            public void onFailure(Throwable arg0) {
-                //AlertUtils.showSnackBar(mFragmentActivity, arg0.getMessage(), view);
-                Log.d("Response----","response---failure-"+arg0);
-            }
-        });
-
-    }
 
 }

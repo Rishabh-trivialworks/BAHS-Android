@@ -1,0 +1,18 @@
+This file contail the guide line for project like naming onvention,String ,XML etc.
+
+
+ 1. Activities
+    a. Contains all the activities. Classes are all named with Activity at the end.
+
+2. Layouts:  Layout name should be
+        activity_
+        adapter_
+        fragment_
+
+3. String xml should be like: <string name="error_message_network">Network error</string>
+
+4. Constant variable should be in Constant Class with specific name like : String FIRST_NAME="first_name"
+
+5. Variable should be like : String firstName;
+
+6. Model Class should contain Model in the end :- ex- UserMode, LoginModel, NetworkModel

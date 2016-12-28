@@ -1,14 +1,18 @@
 package com.androidapp.bahs.activity;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.androidapp.bahs.Dialog.NetworkDialog;
 import com.androidapp.bahs.R;
 import com.androidapp.bahs.activity.base.BaseActivity;
+import com.androidapp.bahs.service.bean.UserModel;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class HomeActivity extends BaseActivity {
     @BindView(R.id.button1)
@@ -63,5 +67,7 @@ public class HomeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
+        NetworkDialog networkDialog=new NetworkDialog(this);
+        networkDialog.show();
     }
 }

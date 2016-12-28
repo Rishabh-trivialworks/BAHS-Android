@@ -11,7 +11,9 @@ public class Constants {
     * Declare constant variable here
     *
     * */
-    public interface WebConstants {
+    public interface AlertConstant {
+        public static String NETWORK_ERROR="Network error";
+        public static String NETWORK_ERROR_CONTENT="Internet connection problem, Please try later ";
 
     }
 

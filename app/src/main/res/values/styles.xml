@@ -48,4 +48,10 @@
         <item name="colorControlNormal">@color/app_green</item>
         <item name="colorControlActivated">@color/app_green</item>
     </style>
+
+    <style name="DialogAnimation_2">
+        <item name="android:windowEnterAnimation">@anim/slide_right</item>
+        <item name="android:windowExitAnimation">@anim/slide_right</item>
+    </style>
+
 </resources>

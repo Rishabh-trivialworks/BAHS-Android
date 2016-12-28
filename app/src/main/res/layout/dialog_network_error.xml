@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <ImageView
+                android:id="@+id/headerIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/warning"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_20"
+                />
+            <TextView
+                android:id="@+id/titleTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/headerIcon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_10"
+                android:text="Dialog Title "
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:id="@+id/desTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/titleTV"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_10"
+                android:text="Please try Later"
+                android:gravity="center"
+                android:textSize="16dp"
+                android:padding="@dimen/margin_10"
+                android:textColor="@color/dark_grey"
+                />
+            <Button
+                android:id="@+id/confirmBTN"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:text="Retry"
+                android:layout_below="@+id/desTV"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_15"
+                android:layout_centerHorizontal="true"
+                android:background="@color/blue_btn_bg_color"
+                />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

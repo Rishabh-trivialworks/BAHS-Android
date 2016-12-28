@@ -1,5 +1,6 @@
 package com.androidapp.bahs.service;
 
+import com.androidapp.bahs.service.bean.UserModel;
 import com.androidapp.bahs.service.ds.response.ListModel;
 import com.androidapp.bahs.service.ds.response.LoginModel;
 import com.androidapp.bahs.service.ds.response.LoginRequest;
@@ -24,19 +25,53 @@ import retrofit2.http.Part;
 
 /**
  * Project : Mobikasa Retrofit Lib
- * Author : Balwinder Singh Madaan
- * Creation Date : 26-feb-2016
  * Description :"for managing url calls like GET,POST.",
  * Creating RestAPI Interface to Send HTTP Request using Retrofit and We have to create an interface to handle our requests. So create a new RestAPI interface that will handle all HTTP Request.
  */
 public interface RestAPI {
-    //login api
+
+    /*
+    * Guideline
+    * 1. If Api takes json :-
+    * @POST(URL)
+      Call<MODEL> signUpNew(@Body MODEL model );
+    *
+    * 2. If Api takes key pair :-
+    * @FormUrlEncoded
+      @POST(URL)
+      Call<MODEL> logIn(@Field("key") String key1, @Field("key") String key2, @Field("key") String key3);
+    *
+    * 3. @Multipart
+        @POST(URL)
+        Call<MODEL> register(@Part("key") String key1, @Part("key") String key2);
+
+    * 4. Get Request
+    *   @GET("URL")
+        Call<MODEL> getUser(@Path("key") String key);
+    *
+    * 5. if we need to add Header in api
+    * @Headers({
+        "Accept: application/vnd.github.v3.full+json",
+        "User-Agent: Retrofit-Sample-App"
+         })
+    *
+    * */
+
+
+
+    /*
+    * This is registration Api
+    * */
+    @POST(Constants.ServiceConstants.TEST_REGISTER)
+    Call<UserModel> signUpNew(@Body UserModel userModel);
+
+    /*
+    * This is Login Api
+    * */
     @FormUrlEncoded
     @POST(Constants.ServiceConstants.LOGIN)
     Call<LoginModel> logIn(@Field("password") String password, @Field("email") String Email, @Field("device_token") String device_token, @Field("device_id") String device_id, @Field("device_type") String device_type);
 
-    @GET(Constants.WebConstants.LISTING)
-    void getcategories(CustomCallBacks<ListModel> customCallBacks);
 
     @Multipart
     @POST(Constants.ServiceConstants.REGISTER)
@@ -58,11 +93,6 @@ public interface RestAPI {
                         @Field("device_id") String device_id,
                         @Field("device_token") String device_token)
             ;
-
-
-    @POST(Constants.ServiceConstants.TEST_REGISTER)
-    Call<Object> signUpNew(@Body RegisterDetail registerDetail );
-
 
     @Headers({
             "Accept-Encoding:gzip, deflate",

@@ -17,6 +17,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
@@ -41,5 +42,7 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.1.0'
     // CardView
     compile 'com.android.support:cardview-v7:24.0.0+'
+
+    compile 'cn.pedant.sweetalert:library:1.3'
 }
 apply plugin: 'com.google.gms.google-services'
