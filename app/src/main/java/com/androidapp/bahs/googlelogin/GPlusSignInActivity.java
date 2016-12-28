@@ -9,7 +9,6 @@ import com.androidapp.bahs.activity.base.BaseActivity;
 import com.androidapp.bahs.service.bean.User;
 import com.androidapp.bahs.service.utils.AlertUtils;
 import com.androidapp.bahs.utils.CommonUtility;
-import com.facebook.CallbackManager;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -19,13 +18,10 @@ import com.google.android.gms.common.api.GoogleApiClient;
 
 
 /**
- * Created by Mobikasa Night on 10/4/2016.
+ * Created by Mobikasa Night on 28/12/2016.
  */
 public class GPlusSignInActivity extends BaseActivity implements GoogleApiClient.OnConnectionFailedListener{
     public static final String KEY_USER = "KEY_USER";
-    private CallbackManager callbackManager;
-    private User user;
-    private GPlusSignInActivity context;
     private GoogleApiClient mGoogleApiClient;
     private static final int RC_SIGN_IN = 007;
 
@@ -35,7 +31,6 @@ public class GPlusSignInActivity extends BaseActivity implements GoogleApiClient
         super.onCreate(savedInstanceState);
         mContext = this;
         CommonUtility.noTitleBar(this);
-        context = this;
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
@@ -47,7 +42,7 @@ public class GPlusSignInActivity extends BaseActivity implements GoogleApiClient
                 .build();
         gPlusLogin();
     }
-
+/*From this method intent to google services for getting detail for user*/
     private void gPlusLogin() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
@@ -61,12 +56,11 @@ public class GPlusSignInActivity extends BaseActivity implements GoogleApiClient
             doGPlusSignIn(result);
         }
     }
+    /*Here we parse the data we get from google signin and set to the USER model class*/
     private void doGPlusSignIn(GoogleSignInResult data) {
 
         if (data.isSuccess()) {
-
             GoogleSignInAccount acct = data.getSignInAccount();
-
             String personName = acct.getDisplayName();
             User user = new User();
             user.setEmail(acct.getEmail());
@@ -81,7 +75,6 @@ public class GPlusSignInActivity extends BaseActivity implements GoogleApiClient
                 intent.putExtra(KEY_USER, user);
                 setResult(RESULT_OK, intent);
                 finish();
-
         }else{
             AlertUtils.showToast(mContext, R.string.alert_welcome_error_google_data);
             finish();
