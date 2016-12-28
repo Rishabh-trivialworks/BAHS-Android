@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "143292713588",
-    "project_id": "androidhive-77413"
+    "project_number": "135940544590",
+    "project_id": "firebase-bahs"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:143292713588:android:2693a1798631fb6d",
+        "mobilesdk_app_id": "1:135940544590:android:ad79bf0607ddafe5",
         "android_client_info": {
           "package_name": "com.androidapp.bahs"
         }
       },
       "oauth_client": [
         {
-          "client_id": "143292713588-habkloob56onotvctn4evep5suv3d2pk.apps.googleusercontent.com",
+          "client_id": "135940544590-u2s6fkfebsgcomq8luf8d1u0f3mnoomt.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.androidapp.bahs",
-            "certificate_hash": "F39BAB2FA1BF5F8A47A856F5F0FD060853898DCE"
+            "certificate_hash": "65CF8E1B2BF32ADD96CA7B22BBA6E342C209ECEA"
           }
         },
         {
-          "client_id": "143292713588-3k7br1i6ohp5ok619em7tu0ql253inht.apps.googleusercontent.com",
+          "client_id": "135940544590-jl7uqr6v87fudfv986fmr8bma9avemu6.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDgxa4_Lk4gt15KjzbM7hUwlTA58SMIDL4"
+          "current_key": "AIzaSyBo5CqZj9GQMerBfWwE58a8lRCQU74KCcE"
         }
       ],
       "services": {
