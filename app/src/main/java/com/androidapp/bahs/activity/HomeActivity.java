@@ -1,7 +1,12 @@
 package com.androidapp.bahs.activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.AttributeSet;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import com.androidapp.bahs.Dialog.NetworkDialog;
@@ -90,7 +95,13 @@ public class HomeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
-        NetworkDialog networkDialog=new NetworkDialog(this);
-        networkDialog.show();
+        NetworkDialog networkDialog=new NetworkDialog(this,R.style.NetworkDialogTheme,NetworkDialog.HEADER_ICON_WARNING);
+        networkDialog.setDialogTitle("Connection Error")
+                .setDialogDescription("Internet connncetion is not working")
+                .setRetryButtonText("Retry")
+                .showRetryButton(true)
+                .showDialog();
+       // networkDialog.getRetryButton().
     }
+
 }

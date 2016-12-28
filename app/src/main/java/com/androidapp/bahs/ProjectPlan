@@ -1,5 +1,6 @@
 This file contail the guide line for project like naming onvention,String ,XML etc.
 
+Note :- -----------------Add Project Instruction Here-------------
 
  1. Activities
     a. Contains all the activities. Classes are all named with Activity at the end.

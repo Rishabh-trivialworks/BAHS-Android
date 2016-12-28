@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:card_view="http://schemas.android.com/tools"
+              android:id="@+id/headerLL"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+              android:layout_height="match_parent"
+              android:background="@android:color/transparent"
+    >
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/margin_10"
+        app:cardElevation="0dp"
+
        >
         <RelativeLayout
             android:layout_width="match_parent"
@@ -18,7 +26,7 @@
                 android:layout_height="48dp"
                 android:src="@drawable/warning"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_10"
                 />
             <TextView
                 android:id="@+id/titleTV"
@@ -26,8 +34,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/headerIcon"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/margin_10"
-                android:text="Dialog Title "
+                android:layout_marginTop="@dimen/margin_5"
+                android:text="Network Error"
                 android:textSize="20dp"
                 android:textColor="@color/black"
                 />
@@ -37,24 +45,63 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/titleTV"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/margin_10"
-                android:text="Please try Later"
+                android:layout_marginBottom="@dimen/margin_5"
+                android:text="@string/internet_connection_error"
                 android:gravity="center"
                 android:textSize="16dp"
-                android:padding="@dimen/margin_10"
+                android:maxLines="2"
+                android:padding="@dimen/margin_5"
                 android:textColor="@color/dark_grey"
                 />
             <Button
                 android:id="@+id/confirmBTN"
                 android:layout_width="wrap_content"
-                android:layout_height="42dp"
+                android:layout_height="35dp"
                 android:text="Retry"
                 android:layout_below="@+id/desTV"
-                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_5"
                 android:layout_marginBottom="@dimen/margin_15"
                 android:layout_centerHorizontal="true"
                 android:background="@color/blue_btn_bg_color"
+                android:visibility="gone"
                 />
+            <LinearLayout
+                android:id="@+id/okCancelLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/desTV"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:layout_marginRight="@dimen/margin_15"
+                android:visibility="gone"
+                >
+
+                <Button
+                    android:id="@+id/cancelBTN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_weight=".5"
+                    android:text="Cancel"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_marginBottom="@dimen/margin_15"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/blue_btn_bg_color"
+                    android:layout_marginRight="@dimen/margin_10"
+                    />
+
+                <Button
+                    android:id="@+id/okBTN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_weight=".5"
+                    android:text="Yes"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_marginBottom="@dimen/margin_15"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/blue_btn_bg_color"
+                    />
+            </LinearLayout>
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 
