@@ -1,7 +1,9 @@
 {
   "project_info": {
     "project_number": "135940544590",
-    "project_id": "firebase-bahs"
+    "firebase_url": "https://fir-bahs.firebaseio.com",
+    "project_id": "firebase-bahs",
+    "storage_bucket": "firebase-bahs.appspot.com"
   },
   "client": [
     {
@@ -13,12 +15,24 @@
       },
       "oauth_client": [
         {
+          "client_id": "135940544590-o426te8aiqjh7a9b38ho35efgdd8ka54.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.androidapp.bahs",
+            "certificate_hash": "384F0DA8CA19346B36AA6CE60FE3551E13227438"
+          }
+        },
+        {
           "client_id": "135940544590-u2s6fkfebsgcomq8luf8d1u0f3mnoomt.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.androidapp.bahs",
             "certificate_hash": "65CF8E1B2BF32ADD96CA7B22BBA6E342C209ECEA"
           }
+        },
+        {
+          "client_id": "135940544590-gn7doak3fsil7s5ufcqmb1a6rpd529sd.apps.googleusercontent.com",
+          "client_type": 3
         },
         {
           "client_id": "135940544590-jl7uqr6v87fudfv986fmr8bma9avemu6.apps.googleusercontent.com",
@@ -35,11 +49,16 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "135940544590-gn7doak3fsil7s5ufcqmb1a6rpd529sd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
-          "status": 1
+          "status": 2
         }
       }
     }
