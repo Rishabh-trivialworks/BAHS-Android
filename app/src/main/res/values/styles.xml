@@ -54,4 +54,5 @@
         <item name="android:windowExitAnimation">@anim/slide_right</item>
     </style>
 
+
 </resources>

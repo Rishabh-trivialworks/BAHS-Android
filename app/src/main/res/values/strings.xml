@@ -8,6 +8,7 @@
     <string name="signup_t_c">By checking this box, you agree to BAHS Terms and Conditions and BAHS Privacy Policy</string>
     <string name="btnname">SIGNUP</string>
     <string name="submit">SUBMIT</string>
+    <string name="buy">BUY</string>
     <string name="email_forgot">Enter your email and we\'ll send you the link to reset the password.</string>
 
     <!-- rohit signup page string  -->
@@ -74,7 +75,9 @@
     <string name="nick_name">What is Your Nick Name?</string>
     <string name="what_is_billing_address">What is Your Billing Address?</string>
     <string name="what_is_phone_number">What is Your Phone Number?</string>
-
+    <string name="membership">Silver Membership</string>
+<string name="view_favorites">View Favorites</string>
+    <string name="history">History</string>
 
 
     <!--rishabh after job activity-->
@@ -96,6 +99,20 @@
     <string name="pick_a_time">PICK A TIME AND DATE</string>
     <string name="option1">option 1: time and date</string>
     <string name="option2">option 2: time and date</string>
+
+    <!--rishabh Payment page activity-->
+
+    <string name="gold_membership">Gold Membership</string>
+    <string name="amount_to_pay">Amount to pay</string>
+    <string name="card_no.">Card Number</string>
+    <string name="expiration_date">Expiration Date</string>
+    <string name="cvv">CVV</string>
+    <string name="billing_postal_code">Billing Postal Code</string>
+    <string name="confirm_payment">Confirm Payment</string>
+    <string name="your_silver_pack">Your silver package subscription fee \n was successfull</string>
+    <string name="save_your_credit_card">SAVE YOUR CREDIT CARD \n TO FASTEN THE PROCESS NEXT TIME</string>
+    <string name="may_be_next_time">May be,next time</string>
+    <string name="save">save</string>
     <string name="long_term">Long Term</string>
     <string name="domestic">Domestic</string>
     <string name="short_term">Short Term</string>

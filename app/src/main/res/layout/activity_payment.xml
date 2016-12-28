@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:weightSum="1">
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  android:layout_weight=".2"
+                  android:orientation="vertical">
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:layout_marginTop="@dimen/ten_dp"
+                  android:text="@string/gold_membership"
+                  android:textColor="@color/black"
+                  android:textStyle="bold"
+        />
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:layout_marginTop="@dimen/ten_dp"
+                  android:text="@string/amount_to_pay"
+                  android:textColor="@color/black"
+                  android:textSize="@dimen/margin_10"
+        />
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:layout_marginTop="@dimen/ten_dp"
+                  android:text="$450.00"
+                  android:textColor="@color/black"
+                  android:textStyle="bold"
+        />
+
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  android:layout_marginRight="@dimen/ten_dp"
+                  android:layout_marginLeft="@dimen/ten_dp"
+                  android:layout_marginTop="@dimen/ten_dp"
+                  android:layout_weight=".7"
+                  android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:orientation="horizontal"
+            android:weightSum="1"
+        >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_48"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_10"
+                android:layout_weight="0.5"
+            >
+
+                <ImageView
+                    android:id="@+id/img_firstname"
+                    style="@style/common_imge_view"
+                    android:src="@drawable/name"
+                    android:visibility="gone"
+                />
+
+                <EditText
+                    android:id="@+id/edt_firstname"
+                    style="@style/signup_edittext"
+                    android:hint="@string/firstname"
+                    android:inputType="textNoSuggestions|textCapWords"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/one_dp"
+                    android:layout_below="@id/edt_firstname"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:visibility="visible"
+                    android:background="@color/line"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_48"
+                android:layout_marginRight="@dimen/margin_10"
+                android:layout_weight="0.5"
+            >
+
+                <ImageView
+                    android:id="@+id/img_lastname"
+                    style="@style/common_imge_view"
+                    android:src="@drawable/name"
+                    android:visibility="gone"
+                />
+
+                <EditText
+                    android:id="@+id/edt_lastname"
+                    style="@style/signup_edittext"
+                    android:hint="@string/lastname"
+
+                    android:inputType="textNoSuggestions|textCapWords"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/one_dp"
+                    android:layout_below="@id/edt_lastname"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:background="@color/line"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+        <EditText
+            style="@style/signup_edittext"
+            android:hint="@string/card_no."
+            android:layout_marginTop="@dimen/ten_dp"
+            android:layout_marginRight="@dimen/ten_dp"
+            android:layout_marginLeft="@dimen/ten_dp"
+            android:inputType="textNoSuggestions|textCapWords"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/one_dp"
+            android:layout_marginRight="@dimen/ten_dp"
+            android:layout_marginLeft="@dimen/ten_dp"
+            android:layout_marginTop="@dimen/margin_10"
+            android:background="@color/line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/twenty_five_dp"
+            android:orientation="horizontal"
+            android:weightSum="1"
+        >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_48"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_10"
+                android:layout_weight="0.5"
+            >
+
+                <ImageView
+                    style="@style/common_imge_view"
+                    android:src="@drawable/name"
+                    android:visibility="gone"
+                />
+
+                <EditText
+                    android:id="@+id/edt_expiry"
+                    style="@style/signup_edittext"
+                    android:hint="@string/expiration_date"
+                    android:inputType="textNoSuggestions|textCapWords"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/one_dp"
+                    android:layout_below="@id/edt_expiry"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:visibility="visible"
+                    android:background="@color/line"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_48"
+                android:layout_marginRight="@dimen/margin_10"
+                android:layout_weight="0.5"
+            >
+
+                <ImageView
+                    style="@style/common_imge_view"
+                    android:src="@drawable/name"
+                    android:visibility="gone"
+                />
+
+                <EditText
+                    android:id="@+id/edt_cvv"
+                    style="@style/signup_edittext"
+                    android:hint="@string/cvv"
+
+                    android:inputType="textNoSuggestions|textCapWords"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/one_dp"
+                    android:layout_below="@id/edt_cvv"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:background="@color/line"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <EditText
+            style="@style/signup_edittext"
+            android:hint="@string/billing_postal_code"
+            android:layout_marginTop="@dimen/ten_dp"
+            android:layout_marginRight="@dimen/ten_dp"
+            android:layout_marginLeft="@dimen/ten_dp"
+            android:inputType="textNoSuggestions|textCapWords"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/one_dp"
+            android:layout_marginRight="@dimen/ten_dp"
+            android:layout_marginLeft="@dimen/ten_dp"
+            android:layout_marginTop="@dimen/margin_10"
+            android:background="@color/line"/>
+
+        <Button android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/fourty_dp"
+        android:background="@drawable/relative_layout_border"
+        android:text="@string/confirm_payment"/>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  android:layout_weight=".1"
+                  android:orientation="vertical">
+
+    </LinearLayout>
+</LinearLayout>
