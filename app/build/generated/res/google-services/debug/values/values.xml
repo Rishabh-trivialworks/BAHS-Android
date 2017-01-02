@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="default_web_client_id" translatable="false">135940544590-jl7uqr6v87fudfv986fmr8bma9avemu6.apps.googleusercontent.com</string>
+    <string name="default_web_client_id" translatable="false">135940544590-gn7doak3fsil7s5ufcqmb1a6rpd529sd.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://fir-bahs.firebaseio.com</string>
     <string name="gcm_defaultSenderId" translatable="false">135940544590</string>
     <string name="google_api_key" translatable="false">AIzaSyBo5CqZj9GQMerBfWwE58a8lRCQU74KCcE</string>
     <string name="google_app_id" translatable="false">1:135940544590:android:ad79bf0607ddafe5</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBo5CqZj9GQMerBfWwE58a8lRCQU74KCcE</string>
+    <string name="google_storage_bucket" translatable="false">firebase-bahs.appspot.com</string>
 </resources>

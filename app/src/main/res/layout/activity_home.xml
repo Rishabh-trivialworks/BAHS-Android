@@ -142,9 +142,12 @@
                 android:text="Page20"
             />
         </GridLayout>
-        <ImageView
-            android:id="@+id/glideExample"
+        <Button
+            android:id="@+id/facebookLogin"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="FB Login"
+            />
+
     </LinearLayout>
 </RelativeLayout>

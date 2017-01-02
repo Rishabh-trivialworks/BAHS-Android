@@ -31,23 +31,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		synchronized (getClass()) {
-			createTables(db);
+			createTables(db,DBConstants.TABLE_PERSON_INFO);
 		}
 	}
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		dropTables(db);	
-		createTables(db);
+		onCreate(db);
 	}
 	
 	public void resetAllTables(SQLiteDatabase db){
 		dropTables(db);
-		createTables(db);
 		AppSharedPreferences.getInstance().clearAllData();
 	}
 	
-	private void createTables(SQLiteDatabase db){
+	private void createTables(SQLiteDatabase db,String table){
 		
 	}
 	

@@ -58,7 +58,7 @@
     </style>
 
     <style name="MyAnimation.Window" parent="@android:style/Animation.Activity">
-        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+       // <item name="android:windowEnterAnimation">@anim/slide_up</item>
     </style>
 
 </resources>

@@ -42,7 +42,8 @@ public class GPlusSignInActivity extends BaseActivity implements GoogleApiClient
                 .build();
         gPlusLogin();
     }
-/*From this method intent to google services for getting detail for user*/
+
+   /*From this method intent to google services for getting detail for user*/
     private void gPlusLogin() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
@@ -56,6 +57,7 @@ public class GPlusSignInActivity extends BaseActivity implements GoogleApiClient
             doGPlusSignIn(result);
         }
     }
+
     /*Here we parse the data we get from google signin and set to the USER model class*/
     private void doGPlusSignIn(GoogleSignInResult data) {
 

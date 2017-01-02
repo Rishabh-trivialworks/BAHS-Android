@@ -2,10 +2,7 @@ package com.androidapp.bahs.Dialog;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Color;
-import android.media.Image;
 import android.os.Bundle;
-import android.telephony.PhoneNumberUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -17,26 +14,21 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.androidapp.bahs.R;
-import com.androidapp.bahs.glideimageloading.GlideImageLoader;
-import com.androidapp.bahs.service.utils.StringUtils;
-import com.androidapp.bahs.utils.Constants;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
-import cn.pedant.SweetAlert.SweetAlertDialog;
 
 /**
  * Created by Mobikasa on 12/27/2016.
  */
 
-/*public class NetworkDialog extends SweetAlertDialog {
+/*public class AlertDialogManager extends SweetAlertDialog {
     private Context mContext;
-    public NetworkDialog(Context context) {
+    public AlertDialogManager(Context context) {
         super(context);
         this.mContext=context;
     }
 
-    public NetworkDialog(Context context, int alertType) {
+    public AlertDialogManager(Context context, int alertType) {
         super(context, alertType);
         this.mContext=context;
     }
@@ -51,7 +43,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 
 }*/
 
-public class NetworkDialog extends Dialog {
+public class AlertDialogManager extends Dialog {
     /*
     * Used Show dialog first then
     * */
@@ -94,14 +86,14 @@ public class NetworkDialog extends Dialog {
     private int cancelButtonBCKColor=R.color.blue_btn_bg_color;
 
 
-   /* public NetworkDialog(Context context,int headerImgType) {
+   /* public AlertDialogManager(Context context,int headerImgType) {
         super(context);
         this.mContext=context;
         this.inflater=LayoutInflater.from(mContext);
         this.headerImageType=headerImgType;
     }*/
 
-    public NetworkDialog(Context context, int themeResId,int headerImgType) {
+    public AlertDialogManager(Context context, int themeResId, int headerImgType) {
         super(context, themeResId);
         this.mContext=context;
         this.inflater=LayoutInflater.from(mContext);
@@ -112,7 +104,7 @@ public class NetworkDialog extends Dialog {
     @Override
     protected void onStart() {
         super.onStart();
-        this.getWindow().getAttributes().windowAnimations=R.style.DialogAnimation_2;
+       // this.getWindow().getAttributes().windowAnimations=R.style.DialogAnimation_2;
     }
 
     @Override
@@ -238,7 +230,7 @@ public class NetworkDialog extends Dialog {
     /*
     * This method set the dialog title with string
     * */
-    public NetworkDialog setDialogTitle(String title){
+    public AlertDialogManager setDialogTitle(String title){
         titleString=title;
         return this;
     }
@@ -246,7 +238,7 @@ public class NetworkDialog extends Dialog {
     /*
     * This method set the dialog des with string
     * */
-    public NetworkDialog setDialogDescription(String des){
+    public AlertDialogManager setDialogDescription(String des){
         desString=des;
         return this;
     }
@@ -256,7 +248,7 @@ public class NetworkDialog extends Dialog {
     /*
      *This method set the RetryButton text with string
      *  */
-    public NetworkDialog setRetryButtonText(String text){
+    public AlertDialogManager setRetryButtonText(String text){
         retryButtonString=text;
         return this;
     }
@@ -266,7 +258,7 @@ public class NetworkDialog extends Dialog {
     /*
     * This method handle header icon
     * */
-    public NetworkDialog setHeaderIcon(int img){
+    public AlertDialogManager setHeaderIcon(int img){
         headerIcon.setImageResource(img);
         return this;
     }
@@ -274,16 +266,24 @@ public class NetworkDialog extends Dialog {
     /*
     * Show dialog
     *  */
-    public NetworkDialog showDialog(){
+    public AlertDialogManager showDialog(){
         this.show();
         return this;
     }
 
 
     /*
+  * Dismiss dialog
+  *  */
+    public AlertDialogManager dismissDialog(){
+        this.dismiss();
+        return this;
+    }
+
+    /*
    * managed visibility of retry button
    * */
-    public NetworkDialog showRetryButton(boolean status){
+    public AlertDialogManager showRetryButton(boolean status){
         retryButtonStatus=status;
         return this;
     }
@@ -292,17 +292,17 @@ public class NetworkDialog extends Dialog {
     * Managed ok and cancel button
     * */
 
-    public NetworkDialog showOkCancelButton(boolean status){
+    public AlertDialogManager showOkCancelButton(boolean status){
         okCancelBtnStatus=status;
         return  this;
     }
 
-    public NetworkDialog setOkButtonText(String text){
+    public AlertDialogManager setOkButtonText(String text){
         okButtonString=text;
         return  this;
     }
 
-    public NetworkDialog setCancelButton(String text){
+    public AlertDialogManager setCancelButton(String text){
         cancelButtonString=text;
         return  this;
     }
@@ -327,43 +327,43 @@ public class NetworkDialog extends Dialog {
     /*
     * Managed Style
     * */
-    public NetworkDialog setTitleTextColor(int color){
+    public AlertDialogManager setTitleTextColor(int color){
         titleColor=color;
         return this;
     }
 
-    public NetworkDialog setDescriptionTextColor(int color){
+    public AlertDialogManager setDescriptionTextColor(int color){
         desColor=color;
         return this;
     }
 
-    public NetworkDialog setRetryButtonTextColor(int color){
+    public AlertDialogManager setRetryButtonTextColor(int color){
         retryButtonColor=color;
         return this;
     }
 
-    public NetworkDialog setRetryButtonBackgroundColor(int color){
+    public AlertDialogManager setRetryButtonBackgroundColor(int color){
         retryButtonBCKColor=color;
         return this;
     }
 
-    public NetworkDialog setOkButtonTextColor(int color){
+    public AlertDialogManager setOkButtonTextColor(int color){
         okButtonColor=color;
         return this;
     }
 
-    public NetworkDialog setOkButtonBackgroundColor(int color){
+    public AlertDialogManager setOkButtonBackgroundColor(int color){
         okButtonBCKColor=color;
         return this;
     }
 
 
-    public NetworkDialog setCancelButtonTextColor(int color){
+    public AlertDialogManager setCancelButtonTextColor(int color){
         cancelButtonColor=color;
         return this;
     }
 
-    public NetworkDialog setCancelButtonBackgroundColor(int color){
+    public AlertDialogManager setCancelButtonBackgroundColor(int color){
         cancelButtonBCKColor=color;
         return this;
     }

@@ -76,7 +76,6 @@ public interface RestAPI {
     @Multipart
     @POST(Constants.ServiceConstants.REGISTER)
     Call<RegisterModel> register(@Part("first_name") String first_name, @Part("last_name") String last_name, @Part("appusername") String appusername, @Part("email") String email, @Part("phone") String phone, @Part("password") String password, @Part("device_token") String device_token, @Part("device_id") String device_id, @Part("device_type") String device_type, @Part("country_code") String country_code, @Part("referral_code") String referral_code, @Part("profile_image") RequestBody description, @Part MultipartBody.Part file
-
     );
 
     //Example getJson
@@ -91,8 +90,7 @@ public interface RestAPI {
                         @Field("password") String password,
                         @Field("device_type") String device_type,
                         @Field("device_id") String device_id,
-                        @Field("device_token") String device_token)
-            ;
+                        @Field("device_token") String device_token);
 
     @Headers({
             "Accept-Encoding:gzip, deflate",

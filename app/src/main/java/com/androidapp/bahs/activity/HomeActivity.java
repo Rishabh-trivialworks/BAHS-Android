@@ -6,20 +6,28 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.Button;
 
-import com.androidapp.bahs.Dialog.NetworkDialog;
+import com.androidapp.bahs.ContextManager;
+import com.androidapp.bahs.Dialog.AlertDialogManager;
 import com.androidapp.bahs.R;
 import com.androidapp.bahs.activity.base.BaseActivity;
 import com.androidapp.bahs.googlelogin.GPlusSignInActivity;
+import com.androidapp.bahs.utils.FacebookUtils.FacebookLoginListener;
 import com.androidapp.bahs.service.bean.User;
 import com.androidapp.bahs.service.utils.AlertUtils;
+import com.androidapp.bahs.utils.FacebookUtils.FacebookManager;
+import com.androidapp.bahs.utils.Syso;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookSdk;
+import com.facebook.GraphResponse;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class HomeActivity extends BaseActivity {
+public class HomeActivity extends BaseActivity implements FacebookLoginListener {
     private final int REQUEST_CODE_GPLUS_LOGIN = 1004;
     public static final String KEY_USER = "KEY_USER";
+    CallbackManager callbackManager;
     @BindView(R.id.button1)
     Button buttin1;
     @BindView(R.id.button11)
@@ -124,14 +132,29 @@ public class HomeActivity extends BaseActivity {
         startActivity(new Intent(this, PaymentConfirmationActivity.class));
     }
 
+    @BindView(R.id.facebookLogin)
+    Button fbButton;
+
+    @OnClick(R.id.facebookLogin)
+    public void doFbLogin(){
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        callbackManager = CallbackManager.Factory.create();
+        //ContextManager.getInstance().setmContext(this);
+        FacebookManager facebookManager=new FacebookManager(this,callbackManager);
+        facebookManager.doFacebookLogin();
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
-        NetworkDialog networkDialog = new NetworkDialog(this, R.style.NetworkDialogTheme, NetworkDialog.HEADER_ICON_WARNING);
-        networkDialog.setDialogTitle("Connection Error").setDialogDescription("Internet connncetion is not working").setRetryButtonText("Retry").showRetryButton(true).showDialog();
-        // networkDialog.getRetryButton().
+        AlertDialogManager alertDialogManager = new AlertDialogManager(this, R.style.NetworkDialogTheme, AlertDialogManager.HEADER_ICON_NONE);
+        alertDialogManager.setDialogTitle("Connection Error")
+                .setRetryButtonText("Retry")
+                .showRetryButton(true).showDialog();
+
     }
 
 
@@ -141,8 +164,8 @@ public class HomeActivity extends BaseActivity {
 
         Bitmap bitmap = null;
         if (resultCode == RESULT_OK) {
+            callbackManager.onActivityResult(requestCode, resultCode, data);
             switch (requestCode) {
-
                 case REQUEST_CODE_GPLUS_LOGIN:
                     doGPlusSignIn(data);
                     // }
@@ -160,4 +183,20 @@ public class HomeActivity extends BaseActivity {
        // GPlusSignup(user);
     }
 
+    @Override
+    public void onFacebookLoginSuccess(GraphResponse response) {
+        try {
+            Syso.debug("Login----", "Login---" + response.getJSONObject().get("email").toString());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onFacebookLoginFailure(Exception e) {
+        e.printStackTrace();
+        Syso.debug("Login----", "Login--fail-");
+        AlertDialogManager alertDialogManager=new AlertDialogManager(HomeActivity.this,R.style.alert_dialog,AlertDialogManager.HEADER_ICON_WARNING);
+        alertDialogManager.showDialog();
+    }
 }

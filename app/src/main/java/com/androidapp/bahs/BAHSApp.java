@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.androidapp.bahs.service.AppContext;
 import com.androidapp.bahs.service.db.DatabaseHelper;
+import com.facebook.FacebookSdk;
 
 import org.acra.ACRA;
 import org.acra.ReportingInteractionMode;
@@ -26,6 +27,7 @@ public class BAHSApp extends Application {
         AppContext.getInstance().setContext(this);
         ACRA.init(this);
         mDatabaseHelper = DatabaseHelper.getInstance(BAHSApp.this);
+        FacebookSdk.sdkInitialize(getApplicationContext());
     }
 
     @Override
