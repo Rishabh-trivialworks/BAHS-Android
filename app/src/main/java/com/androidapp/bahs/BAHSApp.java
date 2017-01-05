@@ -23,6 +23,7 @@ import org.acra.annotation.ReportsCrashes;
 
 public class BAHSApp extends Application {
     private DatabaseHelper mDatabaseHelper;
+    private Tracker mTracker;
     @Override
     public void onCreate() {
         super.onCreate();
@@ -32,6 +33,22 @@ public class BAHSApp extends Application {
         FacebookSdk.sdkInitialize(getApplicationContext());
         AnalyticsTrackers.initialize(this);
         AnalyticsTrackers.getInstance().get(AnalyticsTrackers.Target.APP);
+    }
+
+
+
+
+    /**
+     * Gets the default {@link Tracker} for this {@link Application}.
+     * @return tracker
+     */
+    synchronized public Tracker getDefaultTracker() {
+        if (mTracker == null) {
+            GoogleAnalytics analytics = GoogleAnalytics.getInstance(this);
+            // To enable debug logging use: adb shell setprop log.tag.GAv4 DEBUG
+            mTracker = analytics.newTracker(R.xml.app_tracker);
+        }
+        return mTracker;
     }
 
 

@@ -23,6 +23,8 @@ import com.androidapp.bahs.utils.device.Syso;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookSdk;
 import com.facebook.GraphResponse;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.google.gson.Gson;
 
 import butterknife.BindView;
@@ -159,7 +161,6 @@ public class HomeActivity extends BaseActivity implements FacebookLoginListener 
         alertDialogManager.setDialogTitle("Connection Error")
                 .setRetryButtonText("Retry")
                 .showRetryButton(true).showDialog();
-
     }
 
 
