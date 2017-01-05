@@ -1,14 +1,9 @@
 package com.androidapp.bahs.fragment;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
 import android.graphics.Paint;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
@@ -26,12 +21,10 @@ import com.androidapp.bahs.R;
 import com.androidapp.bahs.RefrenceWrapper;
 import com.androidapp.bahs.activity.CreateAccountActivity;
 import com.androidapp.bahs.activity.ForgotPasswordActivity;
-import com.androidapp.bahs.activity.base.BaseActivity;
-import com.androidapp.bahs.service.db.AppSharedPreferences;
-import com.androidapp.bahs.service.utils.AlertUtils;
-import com.androidapp.bahs.service.utils.CommonUtility;
-import com.androidapp.bahs.service.utils.StringUtils;
-import com.androidapp.bahs.utils.AppMessages;
+import com.androidapp.bahs.utils.device.AlertUtils;
+import com.androidapp.bahs.utils.StringUtils;
+import com.androidapp.bahs.utils.constantvariable.AppMessages;
+import com.androidapp.bahs.utils.CommonUtility;
 
 public class LoginFragment extends Fragment implements View.OnClickListener {
 
@@ -182,7 +175,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         if (refrenceWrapper.getmDeviceUtilHandler().isInternetOn(getActivity()) == true) {
             // service call logic goes here
         } else {
-            AlertUtils.showToast(getActivity(),AppMessages.NO_INTERNET_AVAILABLE);
+            AlertUtils.getInstance().showToast(getActivity(),AppMessages.NO_INTERNET_AVAILABLE);
             return;
         }
 
@@ -193,19 +186,19 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_sign_in:
-                CommonUtility.hideClickEvent(getActivity(), mLinearLayoutInsideScrollView);
+                CommonUtility.getInstance().hideClickEvent(getActivity(), mLinearLayoutInsideScrollView);
                 doSignIn();
                 break;
             case R.id.tvforgot:
                 if (refrenceWrapper.getmDeviceUtilHandler().isInternetOn(getActivity()) == true) {
                     mCreateAccountActivity.activitySwitcher(ForgotPasswordActivity.class);
                 }else{
-                    AlertUtils.showToast(getActivity(),AppMessages.NO_INTERNET_AVAILABLE);
+                    AlertUtils.getInstance().showToast(getActivity(),AppMessages.NO_INTERNET_AVAILABLE);
                 }
                 break;
 
             case R.id.linearlayoutInsideScrollView:
-                CommonUtility.hideClickEvent(getActivity(), mLinearLayoutInsideScrollView);
+                CommonUtility.getInstance().hideClickEvent(getActivity(), mLinearLayoutInsideScrollView);
                 break;
         }
     }

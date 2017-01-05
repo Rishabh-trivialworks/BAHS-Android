@@ -34,7 +34,7 @@
                   android:layout_weight=".25"
                   android:orientation="vertical">
 
-        <com.androidapp.bahs.roundimage.CircularImageView
+        <com.androidapp.bahs.utils.roundimage.CircularImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

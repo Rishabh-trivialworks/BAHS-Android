@@ -71,19 +71,5 @@ public class ImageUploadingDialog extends DialogFragment {
         getActivity().startActivityForResult(Intent.createChooser(intent, "Select Picture"),SELECT_IMAGE);
     }
 
-   /* @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==SELECT_IMAGE){
-            if (resultCode==Activity.RESULT_OK){
-                if(data!=null){
-                    try{
-                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), data.getData());
-                    }catch (Exception e){
 
-                    }
-                }
-            }
-        }
-    }*/
 }

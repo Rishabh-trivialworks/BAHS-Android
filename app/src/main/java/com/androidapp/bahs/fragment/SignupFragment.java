@@ -1,13 +1,9 @@
 package com.androidapp.bahs.fragment;
 
-import android.app.Dialog;
-import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.text.Editable;
@@ -34,20 +30,14 @@ import com.androidapp.bahs.RefrenceWrapper;
 import com.androidapp.bahs.activity.CreateAccountActivity;
 import com.androidapp.bahs.interfaces.ImageUploadingListener;
 import com.androidapp.bahs.service.ds.response.RegisterDetail;
-import com.androidapp.bahs.service.ds.response.RegisterModel;
-import com.androidapp.bahs.service.utils.AlertUtils;
-import com.androidapp.bahs.service.utils.CommonUtility;
-import com.androidapp.bahs.service.utils.StringUtils;
-import com.androidapp.bahs.utils.AppMessages;
-import com.androidapp.bahs.utils.ImageUploadingDialog;
+import com.androidapp.bahs.utils.device.AlertUtils;
+import com.androidapp.bahs.utils.StringUtils;
+import com.androidapp.bahs.utils.constantvariable.AppMessages;
+import com.androidapp.bahs.utils.CommonUtility;
 import com.androidapp.bahs.utils.ServiceCallsUtils;
-import com.androidapp.bahs.utils.Syso;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -237,11 +227,11 @@ public class SignupFragment extends Fragment implements View.OnClickListener,Ima
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_register:
-                CommonUtility.hideClickEvent(getActivity(), mLinearLayoutInsideScrollView);
+                CommonUtility.getInstance().hideClickEvent(getActivity(), mLinearLayoutInsideScrollView);
                 doSignUp();
                 break;
             case R.id.linearlayoutInsideScrollView:
-                CommonUtility.hideClickEvent(getActivity(), mLinearLayoutInsideScrollView);
+                CommonUtility.getInstance().hideClickEvent(getActivity(), mLinearLayoutInsideScrollView);
                 break;
             case R.id.login_txt:
                 ((CreateAccountActivity) getActivity()).gotoLoginFragment();
@@ -304,7 +294,7 @@ public class SignupFragment extends Fragment implements View.OnClickListener,Ima
                // service call logic goes here
 
         } else {
-            AlertUtils.showToast(getActivity(),AppMessages.NO_INTERNET_AVAILABLE);
+            AlertUtils.getInstance().showToast(getActivity(),AppMessages.NO_INTERNET_AVAILABLE);
             return;
         }
 

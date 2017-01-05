@@ -1,14 +1,11 @@
 package com.androidapp.bahs.utils;
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
-import com.androidapp.bahs.RefrenceWrapper;
 import com.androidapp.bahs.service.db.AppSharedPreferences;
-import com.androidapp.bahs.service.utils.Constants;
 
 /**
  * Created by cpu505 on 17/9/15.

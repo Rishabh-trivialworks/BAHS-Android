@@ -17,9 +17,10 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 
 import com.androidapp.bahs.service.AppContext;
-import com.androidapp.bahs.service.utils.LogUtils;
+import com.androidapp.bahs.utils.device.LogUtils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -27,18 +28,26 @@ import java.security.NoSuchAlgorithmException;
 
 public class CommonUtility {
 
-	public static void noTitleBar(FragmentActivity context) {
+	public static CommonUtility instance;
+	public static CommonUtility getInstance(){
+		if(instance==null){
+			instance=new CommonUtility();
+		}
+		return instance;
+	}
+
+	public void noTitleBar(FragmentActivity context) {
 		context.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		//		   context.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 	}
 
-	public static boolean isNetworkAvailable(Context context) {
+	public boolean isNetworkAvailable(Context context) {
 		ConnectivityManager connectivityManager  = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
 		return activeNetworkInfo != null && activeNetworkInfo.isConnected();
 	}
 
-	public static String printKeyHash(FragmentActivity context) {
+	public String printKeyHash(FragmentActivity context) {
 		PackageInfo packageInfo;
 		String key = null;
 		try {
@@ -74,21 +83,21 @@ public class CommonUtility {
 		return key;
 	}
 
-	public static void hideSoftKeyboard(FragmentActivity activity) {
+	public void hideSoftKeyboard(FragmentActivity activity) {
 		InputMethodManager inputMethodManager = (InputMethodManager)  activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
 		if (inputMethodManager!=null) {
 			inputMethodManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
 		}
 	}
 
-	public static void hideSoftKeyboard(Activity activity) {
+	public void hideSoftKeyboard(Activity activity) {
 	    InputMethodManager inputMethodManager = (InputMethodManager)  activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
 	    if(inputMethodManager!=null)
 	    inputMethodManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
 	}
 
 
-	public static void checkGCM(FragmentActivity mContext) {
+	public void checkGCM(FragmentActivity mContext) {
 		// Make sure the device has the proper dependencies.
 		// GCMRegistrar.checkDevice(mContext);
 		// Make sure the manifest was properly set - comment out this line
@@ -123,7 +132,7 @@ public class CommonUtility {
 
 
 
-	public static void hideSoftKeyUI(View view, final Activity context) {
+	public  void hideSoftKeyUI(View view, final Activity context) {
 		if (!(view instanceof EditText)) {
 			view.setOnTouchListener(new View.OnTouchListener() {
 				@Override
@@ -143,6 +152,38 @@ public class CommonUtility {
 				View innerView = ((ViewGroup) view).getChildAt(i);
 				hideSoftKeyUI(innerView, context);
 			}
+		}
+	}
+
+	public  void setupUI(View view, final Activity context) {
+		if (!(view instanceof EditText)) {
+			view.setOnTouchListener(new View.OnTouchListener() {
+				@Override
+				public boolean onTouch(View v, MotionEvent event) {
+					if (context != null) {
+						hideSoftKeyboard(context);
+					}
+					return false;
+				}
+
+			});
+		}
+		// If a layout container, iterate over children and seed recursion.
+		if (view instanceof ViewGroup) {
+			for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
+				View innerView = ((ViewGroup) view).getChildAt(i);
+				setupUI(innerView, context);
+			}
+		}
+	}
+
+
+	public  void hideClickEvent(Context context, LinearLayout linearLayout) {
+		try {
+			InputMethodManager inputMethodManager = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
+			inputMethodManager.hideSoftInputFromWindow(linearLayout.getWindowToken(), 0);
+		} catch (Exception e) {
+
 		}
 	}
 

@@ -1,13 +1,10 @@
-package com.androidapp.bahs.utils.FacebookUtils;
+package com.androidapp.bahs.utils.facebookutils;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 
-import com.androidapp.bahs.ContextManager;
 import com.androidapp.bahs.activity.HomeActivity;
-import com.androidapp.bahs.activity.base.BaseActivity;
-import com.androidapp.bahs.utils.Syso;
+import com.androidapp.bahs.utils.device.Syso;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -101,4 +98,6 @@ public  class FacebookManager<T>  {
          graphRequest.setParameters(parameters);
          graphRequest.executeAsync();
      }
+
+
 }

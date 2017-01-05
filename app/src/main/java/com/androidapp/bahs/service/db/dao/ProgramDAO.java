@@ -6,8 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.androidapp.bahs.service.db.tables.ProgramTable;
 import com.androidapp.bahs.service.ds.ProgramBean;
-import com.androidapp.bahs.service.utils.Constants;
-import com.androidapp.bahs.service.utils.LogUtils;
+import com.androidapp.bahs.service.utils.ServiceConstants;
+import com.androidapp.bahs.utils.device.LogUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,14 +40,14 @@ public class ProgramDAO extends AbsDAO<ProgramBean> {
 
     @Override
     public String getMinCreatedDate() {
-        String query = "SELECT MIN(" + ProgramTable.ProgramColumns.created_date + ") from " + ProgramTable.NAME + " where " + ProgramTable.ProgramColumns.is_added_from_program_list_service + " =" + Constants.SERVICE_TAGS.PROGRAM_LIST_SERVICE;
+        String query = "SELECT MIN(" + ProgramTable.ProgramColumns.created_date + ") from " + ProgramTable.NAME + " where " + ProgramTable.ProgramColumns.is_added_from_program_list_service + " =" + ServiceConstants.SERVICE_TAGS.PROGRAM_LIST_SERVICE;
         Cursor cursor = db.rawQuery(query, null);
         cursor.moveToFirst();
         return cursor.getString(0);
     }
 
     public String getMinCreatedDateMyWorkout() {
-        String query = "SELECT MIN(" + ProgramTable.ProgramColumns.created_date + ") from " + ProgramTable.NAME + " where " + ProgramTable.ProgramColumns.is_added_from_program_list_service + " =" + Constants.SERVICE_TAGS.MYWORKOUT_PROGRAMS_LIST_SERVICE;
+        String query = "SELECT MIN(" + ProgramTable.ProgramColumns.created_date + ") from " + ProgramTable.NAME + " where " + ProgramTable.ProgramColumns.is_added_from_program_list_service + " =" + ServiceConstants.SERVICE_TAGS.MYWORKOUT_PROGRAMS_LIST_SERVICE;
         Cursor cursor = db.rawQuery(query, null);
         cursor.moveToFirst();
         return cursor.getString(0);

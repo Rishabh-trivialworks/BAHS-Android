@@ -3,25 +3,18 @@ package com.androidapp.bahs.utils;
 import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.Signature;
 import android.content.res.AssetFileDescriptor;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.ContactsContract;
-import android.util.Base64;
-import android.util.Log;
 
 import com.androidapp.bahs.service.bean.User;
-import com.androidapp.bahs.service.utils.LogUtils;
+import com.androidapp.bahs.utils.device.LogUtils;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -138,24 +131,5 @@ public class ContactUtility {
 			return null;
 		}
 	}
-
-	public void getHashKey(Context mContext) {
-		try {
-			PackageInfo info = mContext.getPackageManager().getPackageInfo("com.androidapp.bahs", PackageManager.GET_SIGNATURES);
-			for (Signature signature : info.signatures) {
-				MessageDigest md = MessageDigest.getInstance("SHA");
-				md.update(signature.toByteArray());
-				Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
-			}
-		} catch (PackageManager.NameNotFoundException e) {
-
-		} catch (NoSuchAlgorithmException e) {
-
-		}
-
-	}
-
-
-
 
 }

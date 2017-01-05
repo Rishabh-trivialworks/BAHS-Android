@@ -1,14 +1,13 @@
-package com.androidapp.bahs.glideimageloading;
+package com.androidapp.bahs.imageloader;
 
 import android.content.Context;
-import android.gesture.GestureLibraries;
 import android.widget.ImageView;
 
 import com.androidapp.bahs.R;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
-public class GlideImageLoader {
+public class GlideImageLoader  {
 
     public static GlideImageLoader instance;
     public static GlideImageLoader getInstance(){

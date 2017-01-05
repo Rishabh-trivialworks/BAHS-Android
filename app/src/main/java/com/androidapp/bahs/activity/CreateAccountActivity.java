@@ -17,17 +17,17 @@ import android.widget.TextView;
 
 import com.androidapp.bahs.R;
 import com.androidapp.bahs.RefrenceWrapper;
-import com.androidapp.bahs.facebook.CommonInterface;
-import com.androidapp.bahs.facebook.ModalFbUserProfile;
-import com.androidapp.bahs.facebook.SocialMediaIntegration;
-import com.androidapp.bahs.facebook.SocialMediaInterface;
+import com.androidapp.bahs.utils.CommonUtility;
+import com.androidapp.bahs.utils.facebookutils.facebook.CommonInterface;
+import com.androidapp.bahs.utils.facebookutils.facebook.ModalFbUserProfile;
+import com.androidapp.bahs.utils.facebookutils.facebook.SocialMediaIntegration;
+import com.androidapp.bahs.utils.facebookutils.facebook.SocialMediaInterface;
 import com.androidapp.bahs.firebase.RegistratinIntentService;
 import com.androidapp.bahs.fragment.LoginFragment;
 import com.androidapp.bahs.fragment.SignupFragment;
 import com.androidapp.bahs.service.db.AppSharedPreferences;
-import com.androidapp.bahs.service.utils.AlertUtils;
-import com.androidapp.bahs.service.utils.CommonUtility;
-import com.androidapp.bahs.utils.AppMessages;
+import com.androidapp.bahs.utils.device.AlertUtils;
+import com.androidapp.bahs.utils.constantvariable.AppMessages;
 
 import butterknife.ButterKnife;
 
@@ -94,7 +94,7 @@ public class CreateAccountActivity extends SocialMediaIntegration implements Vie
                 if (refrenceWrapper.getmDeviceUtilHandler().isInternetOn(CreateAccountActivity.this) == true) {
                     facebooklogin();
                 } else {
-                    AlertUtils.showToast(CreateAccountActivity.this, AppMessages.NO_INTERNET_AVAILABLE);
+                    AlertUtils.getInstance().showToast(CreateAccountActivity.this, AppMessages.NO_INTERNET_AVAILABLE);
                 }
                 break;
 
@@ -104,7 +104,7 @@ public class CreateAccountActivity extends SocialMediaIntegration implements Vie
 
     private void onButtonClick(boolean loginPagePush) {
         if (true){//(refrenceWrapper.getmDeviceUtilHandler().isInternetOn(CreateAccountActivity.this) == true) {
-            CommonUtility.hideSoftKeyboard(CreateAccountActivity.this);
+            CommonUtility.getInstance().hideSoftKeyboard(CreateAccountActivity.this);
             mFragment = refrenceWrapper.getmFragmentCallingUtilsHandler().getFragment(this, R.id.container);
             if (loginPagePush) {
                 if (mFragment instanceof LoginFragment) {
@@ -120,12 +120,12 @@ public class CreateAccountActivity extends SocialMediaIntegration implements Vie
                 refrenceWrapper.getmFragmentCallingUtilsHandler().replaceAndCommitFragmentByAddingToBackStack(R.id.container, new SignupFragment(), this, true, "", false);
             }
         } else {
-            AlertUtils.showToast(CreateAccountActivity.this, AppMessages.NO_INTERNET_AVAILABLE);
+            AlertUtils.getInstance().showToast(CreateAccountActivity.this, AppMessages.NO_INTERNET_AVAILABLE);
         }
     }
 
     public void gotoLoginFragment() {
-        CommonUtility.hideSoftKeyboard(CreateAccountActivity.this);
+        CommonUtility.getInstance().hideSoftKeyboard(CreateAccountActivity.this);
         refrenceWrapper.getmFragmentCallingUtilsHandler().commitFragment(new SignupFragment(), this, true);
         LoginSignupLinearLayout.setVisibility(View.GONE);
         refrenceWrapper.getmFragmentCallingUtilsHandler().replaceAndCommitFragmentByAddingToBackStack(R.id.container, new LoginFragment(), this, true, "", false);
@@ -160,7 +160,7 @@ public class CreateAccountActivity extends SocialMediaIntegration implements Vie
             ((CreateAccountActivity) this).login_facebook_getProfileInformation((CommonInterface) this);
 
         } else {
-            AlertUtils.showToast(CreateAccountActivity.this, AppMessages.NO_INTERNET_AVAILABLE);
+            AlertUtils.getInstance().showToast(CreateAccountActivity.this, AppMessages.NO_INTERNET_AVAILABLE);
         }
     }
 
@@ -176,7 +176,7 @@ public class CreateAccountActivity extends SocialMediaIntegration implements Vie
 
     @Override
     public void facbook_info(ModalFbUserProfile modelfbuser, String fb_access_token) {
-        AlertUtils.showToast(CreateAccountActivity.this, modelfbuser.getName());
+        AlertUtils.getInstance().showToast(CreateAccountActivity.this, modelfbuser.getName());
     }
     private int SELECT_IMAGE=1000;
     @Override

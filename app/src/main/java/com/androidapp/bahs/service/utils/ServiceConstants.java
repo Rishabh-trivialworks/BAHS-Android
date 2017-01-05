@@ -1,7 +1,7 @@
 package com.androidapp.bahs.service.utils;
 
 
-public class Constants {
+public class ServiceConstants {
 
     public static final String REVIEW_URL_GOOGLE = "market://details?id=performix.com.performix";
     public static int mProgramListPage = 0;
@@ -32,7 +32,7 @@ public class Constants {
         int RESULT_LOAD_IMAGE = 101;
     }
 
-    public interface ServiceConstants {
+    public interface ServiceURL {
         String FOLLOWING_URL = "/user/totalfollwings?";
         String FOLLOWERS_URL = "/user/totalfollwers?";
         String LOGIN="users/signin";

@@ -1,4 +1,4 @@
-package com.androidapp.bahs.utils;
+package com.androidapp.bahs.utils.constantvariable;
 
 /**
  * Created by Mobikasa on 12/22/2016.

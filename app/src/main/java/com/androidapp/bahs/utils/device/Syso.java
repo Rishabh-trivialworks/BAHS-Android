@@ -1,4 +1,4 @@
-package com.androidapp.bahs.utils;
+package com.androidapp.bahs.utils.device;
 
 import android.util.Log;
 

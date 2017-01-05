@@ -5,8 +5,8 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
 import com.androidapp.bahs.service.AppContext;
-import com.androidapp.bahs.service.utils.Constants;
-import com.androidapp.bahs.service.utils.LogUtils;
+import com.androidapp.bahs.service.utils.ServiceConstants;
+import com.androidapp.bahs.utils.device.LogUtils;
 
 public class AppSharedPreferences {
 
@@ -85,7 +85,7 @@ public class AppSharedPreferences {
         mPrefsEditor.clear();
         mPrefsEditor.putBoolean(mInviteFriendsFragment, val);
         mPrefsEditor.putBoolean(mWalkThroughTutorialStatus, val2);
-        mPrefsEditor.putString(mGcmId, Constants.GCM_CONSTANTS.REGISTER_AGAIN);
+        mPrefsEditor.putString(mGcmId, ServiceConstants.GCM_CONSTANTS.REGISTER_AGAIN);
         mPrefsEditor.commit();
     }
 
@@ -454,7 +454,7 @@ public class AppSharedPreferences {
     }
 
     public int getCurrentActiveBottomTab() {
-        return mPrefs.getInt(mCurrentBottomActiveTab, Constants.BottomBarTabConstants.PROGRAMS_TAB);
+        return mPrefs.getInt(mCurrentBottomActiveTab, ServiceConstants.BottomBarTabConstants.PROGRAMS_TAB);
     }
 
     public void setCurrentActiveBottomTab(int value) {
@@ -463,7 +463,7 @@ public class AppSharedPreferences {
     }
 
     public int getLastLoginActivityFragmentTag() {
-        return mPrefs.getInt(mLastLoginActivityFragmentTag, Constants.FragmentTagConstants.FRAGMENT_LOGIN);
+        return mPrefs.getInt(mLastLoginActivityFragmentTag, ServiceConstants.FragmentTagConstants.FRAGMENT_LOGIN);
     }
 
     public void setLastLoginActivityFragmentTag(int value) {
@@ -472,7 +472,7 @@ public class AppSharedPreferences {
     }
 
     public int getLastProgramTabFragmentTag() {
-        return mPrefs.getInt(mLastProgramTabFragmentTag, Constants.FragmentTagConstants.FRAGMENT_PROGRAM_LIST);
+        return mPrefs.getInt(mLastProgramTabFragmentTag, ServiceConstants.FragmentTagConstants.FRAGMENT_PROGRAM_LIST);
     }
 
     public void setLastProgramTabFragmentTag(int value) {
@@ -481,7 +481,7 @@ public class AppSharedPreferences {
     }
 
     public int getLastMyWorkoutTabFragmentTag() {
-        return mPrefs.getInt(mLastMyWorkoutTabFragmentTag, Constants.FragmentTagConstants.FRAGMENT_MY_WORKOUT);
+        return mPrefs.getInt(mLastMyWorkoutTabFragmentTag, ServiceConstants.FragmentTagConstants.FRAGMENT_MY_WORKOUT);
     }
 
     public void setLastMyWorkoutTabFragmentTag(int value) {
@@ -491,7 +491,7 @@ public class AppSharedPreferences {
 
 
     public int getLastNotificationTabFragmentTag() {
-        return mPrefs.getInt(mLastNotificationTabFragmentTag, Constants.FragmentTagConstants.FRAGMENT_NOTIFICATION);
+        return mPrefs.getInt(mLastNotificationTabFragmentTag, ServiceConstants.FragmentTagConstants.FRAGMENT_NOTIFICATION);
     }
 
     public void setLastNotificationTabFragmentTag(int value) {
@@ -501,7 +501,7 @@ public class AppSharedPreferences {
 
 
     public int getLastMoreTabFragmentTag() {
-        return mPrefs.getInt(mLastMoreTabFragmentTag, Constants.FragmentTagConstants.FRAGMENT_MORE_OPTIONS);
+        return mPrefs.getInt(mLastMoreTabFragmentTag, ServiceConstants.FragmentTagConstants.FRAGMENT_MORE_OPTIONS);
     }
 
     public void setLastMoreTabFragmentTag(int value) {
@@ -510,7 +510,7 @@ public class AppSharedPreferences {
     }
 
     public int getLastFeedTabFragmentTag() {
-        return mPrefs.getInt(mLastFeedTabFragmentTag, Constants.FragmentTagConstants.FRAGMENT_FEED);
+        return mPrefs.getInt(mLastFeedTabFragmentTag, ServiceConstants.FragmentTagConstants.FRAGMENT_FEED);
     }
 
     public void setLastFeedTabFragmentTag(int value) {

@@ -1,8 +1,6 @@
 package com.androidapp.bahs.utils;
 
-import android.provider.Settings;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 
@@ -12,14 +10,11 @@ import com.androidapp.bahs.service.bean.UserModel;
 import com.androidapp.bahs.service.db.AppSharedPreferences;
 import com.androidapp.bahs.service.db.DatabaseHelper;
 import com.androidapp.bahs.service.ds.response.LoginModel;
-import com.androidapp.bahs.service.ds.response.RegisterDetail;
 import com.androidapp.bahs.service.ds.response.RegisterModel;
-import com.androidapp.bahs.service.utils.AlertUtils;
+import com.androidapp.bahs.utils.device.AlertUtils;
+import com.androidapp.bahs.utils.device.Syso;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -38,24 +33,24 @@ public class ServiceCallsUtils {
         call.enqueue(new CustomCallBacks<RegisterModel>(mFragmentActivity, true) {
             @Override
             public void onSucess(Call<RegisterModel> call, Response<RegisterModel> response) {
-                AlertUtils.showSnackBar(mFragmentActivity, "User Name=" + response.toString(), view);
+                AlertUtils.getInstance().showSnackBar(mFragmentActivity, "User Name=" + response.toString(), view);
             }
 
             @Override
             public void onFailure(Throwable arg0) {
-                AlertUtils.showSnackBar(mFragmentActivity, "User Name=" + arg0.getMessage(), view);
+                AlertUtils.getInstance().showSnackBar(mFragmentActivity, "User Name=" + arg0.getMessage(), view);
             }
         });
 
     }
 
     private void resetAppData(FragmentActivity mFragmentActivity) {
-        DatabaseHelper.getInstance(mFragmentActivity.getApplication()).resetAllTables(DatabaseHelper.getDatabase());
-        AppSharedPreferences.getInstance().clearAllData();
+        /*DatabaseHelper.getInstance(mFragmentActivity.getApplication()).resetAllTables(DatabaseHelper.getDatabase());
+        AppSharedPreferences.getInstance().clearAllData();*/
     }
 
     private void showDeactivatedAccountPopup(FragmentActivity mFragmentActivity, LoginModel response) {
-        AlertUtils.showToast(mFragmentActivity, "User Name=" + response.getUser().getFirstName().toString());
+        AlertUtils.getInstance().showToast(mFragmentActivity, "User Name=" + response.getUser().getFirstName().toString());
     }
 
     public void callSignIn(final FragmentActivity mFragmentActivity, String email, String password, final View view) {
@@ -65,12 +60,12 @@ public class ServiceCallsUtils {
         call.enqueue(new CustomCallBacks<LoginModel>(mFragmentActivity,true) {
             @Override
             public void onSucess(Call<LoginModel> call, Response<LoginModel> response) {
-                AlertUtils.showSnackBar(mFragmentActivity, "User Name=" + response.body().getUser().toString(), view);
+                AlertUtils.getInstance().showSnackBar(mFragmentActivity, "User Name=" + response.body().getUser().toString(), view);
             }
 
             @Override
             public void onFailure(Throwable arg0) {
-                AlertUtils.showSnackBar(mFragmentActivity, arg0.getMessage(), view);
+                AlertUtils.getInstance().showSnackBar(mFragmentActivity, arg0.getMessage(), view);
             }
         });
 

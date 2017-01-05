@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.androidapp.bahs"
-          xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.androidapp.bahs">
 
     <uses-sdk tools:overrideLibrary="com.facebook"/>
 
@@ -24,6 +24,41 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
+
+
+        <!--
+        Optionally, register AnalyticsReceiver and AnalyticsService to support background
+        dispatching on non-Google Play devices
+      -->
+        <receiver
+            android:name="com.google.android.gms.analytics.AnalyticsReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.google.android.gms.analytics.AnalyticsService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <!--
+             Optionally, register CampaignTrackingReceiver and CampaignTrackingService to enable
+             installation campaign reporting
+        -->
+        <receiver
+            android:name="com.google.android.gms.analytics.CampaignTrackingReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService" />
+
+
+
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id"/>
@@ -35,7 +70,7 @@
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
-        <activity android:name=".activity.SplashActivity"/>
+
 
         <service android:name=".firebase.MyFirebaseInstanceIDService">
             <intent-filter>
@@ -46,6 +81,10 @@
             android:name=".firebase.RegistratinIntentService"
             android:exported="false"/>
 
+        <activity android:name=".activity.SplashActivity">
+
+        </activity>
+
         <activity
             android:name=".activity.HomeActivity"
             android:screenOrientation="portrait">
@@ -54,6 +93,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+
         </activity>
         <activity
             android:name=".activity.IntroActivity"
@@ -103,9 +143,9 @@
             android:name=".activity.PaymentConfirmationActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name="com.androidapp.bahs.googlelogin.GPlusSignInActivity"
+            android:name=".utils.googlelogin.GPlusSignInActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|adjustResize" >
+            android:windowSoftInputMode="stateHidden|adjustResize">
         </activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

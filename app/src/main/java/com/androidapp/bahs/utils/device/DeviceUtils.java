@@ -1,8 +1,7 @@
-package com.androidapp.bahs.service.utils;
+package com.androidapp.bahs.utils.device;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.pm.ActivityInfo;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
@@ -14,10 +13,8 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
-import com.androidapp.bahs.R;
 import com.androidapp.bahs.service.AppContext;
 import com.androidapp.bahs.service.db.AppSharedPreferences;
-import com.androidapp.bahs.service.utils.LogUtils;
 
 import java.util.Random;
 

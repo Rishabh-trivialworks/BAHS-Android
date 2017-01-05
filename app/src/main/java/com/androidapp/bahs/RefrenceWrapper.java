@@ -1,8 +1,6 @@
 package com.androidapp.bahs;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.pm.PackageInfo;
 import android.graphics.Typeface;
 import android.view.View;
@@ -11,13 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.androidapp.bahs.fragment.SignupFragment;
 import com.androidapp.bahs.service.RestAPI;
-import com.androidapp.bahs.service.utils.Constants;
-import com.androidapp.bahs.service.utils.DeviceUtils;
-import com.androidapp.bahs.service.utils.StringUtils;
-import com.androidapp.bahs.utils.DateTimeUtils;
-import com.androidapp.bahs.utils.FragmentActivityUtils;
+import com.androidapp.bahs.service.utils.ServiceConstants;
+import com.androidapp.bahs.utils.device.DeviceUtils;
+import com.androidapp.bahs.utils.StringUtils;
+import com.androidapp.bahs.utils.date.DateTimeUtils;
 import com.androidapp.bahs.utils.FragmentCallingUtils;
 import com.androidapp.bahs.utils.ImageUploadingDialog;
 import com.androidapp.bahs.utils.PictureUtils;
@@ -41,7 +37,6 @@ public class RefrenceWrapper {
     private DateTimeUtils mDateTimeUtils;
     private ImageUploadingDialog mImageUploadingDialog;
     private FragmentCallingUtils mFragmentCallingUtilsHandler;
-    private FragmentActivityUtils mFragmentActivityUtils;
     private ServiceCallsUtils mServiceCallHandler;
     private RestAPI service;
 
@@ -67,7 +62,7 @@ public class RefrenceWrapper {
     }
 
     private RestAPI setService() {
-        Retrofit.Builder builder = new Retrofit.Builder().baseUrl(Constants.WebConstants.BASE_URL_CONSTANT).addConverterFactory(GsonConverterFactory.create());
+        Retrofit.Builder builder = new Retrofit.Builder().baseUrl(ServiceConstants.WebConstants.BASE_URL_CONSTANT).addConverterFactory(GsonConverterFactory.create());
         Retrofit retrofit = builder.client(new OkHttpClient.Builder().build()).build();
         service = retrofit.create(RestAPI.class);
         return service;
@@ -88,12 +83,6 @@ public class RefrenceWrapper {
         return mServiceCallHandler;
     }
 
-    public FragmentActivityUtils getmFragmentActivityUtilsHandler() {
-        if (mFragmentActivityUtils == null) {
-            mFragmentActivityUtils = new FragmentActivityUtils();
-        }
-        return mFragmentActivityUtils;
-    }
 
     public Typeface getTypeface() {
         if (typeface_normal == null) {

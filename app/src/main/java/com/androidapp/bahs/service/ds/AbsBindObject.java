@@ -1,6 +1,6 @@
 package com.androidapp.bahs.service.ds;
 
-import com.androidapp.bahs.service.utils.LogUtils;
+import com.androidapp.bahs.utils.device.LogUtils;
 
 import java.io.Serializable;
 import java.lang.reflect.Field;

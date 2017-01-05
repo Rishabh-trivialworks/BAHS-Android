@@ -1,4 +1,4 @@
-package com.androidapp.bahs.service.utils;
+package com.androidapp.bahs.utils.date;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -9,6 +9,8 @@ import java.util.StringTokenizer;
 import java.util.TimeZone;
 
 import android.util.Log;
+
+import com.androidapp.bahs.utils.device.LogUtils;
 
 public class DateUtils {
 	

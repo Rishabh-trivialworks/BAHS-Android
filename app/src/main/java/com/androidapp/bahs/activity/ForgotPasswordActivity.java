@@ -17,9 +17,9 @@ import android.widget.TextView;
 import com.androidapp.bahs.R;
 import com.androidapp.bahs.RefrenceWrapper;
 import com.androidapp.bahs.activity.base.BaseActivity;
-import com.androidapp.bahs.service.utils.AlertUtils;
-import com.androidapp.bahs.service.utils.StringUtils;
-import com.androidapp.bahs.utils.AppMessages;
+import com.androidapp.bahs.utils.device.AlertUtils;
+import com.androidapp.bahs.utils.StringUtils;
+import com.androidapp.bahs.utils.constantvariable.AppMessages;
 
 public class ForgotPasswordActivity extends BaseActivity implements View.OnClickListener {
     private EditText mEmailEditText;
@@ -132,7 +132,7 @@ public class ForgotPasswordActivity extends BaseActivity implements View.OnClick
                 if (refrenceWrapper.getmDeviceUtilHandler().isInternetOn(ForgotPasswordActivity.this) == true) {
                     forgotPasswordRequest();
                 }else{
-                    AlertUtils.showToast(ForgotPasswordActivity.this, AppMessages.NO_INTERNET_AVAILABLE);
+                    AlertUtils.getInstance().showToast(ForgotPasswordActivity.this, AppMessages.NO_INTERNET_AVAILABLE);
                 }
                 break;
 

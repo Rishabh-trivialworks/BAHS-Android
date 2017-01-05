@@ -13,7 +13,7 @@ public class TableUtils {
 
 
     public TableUtils() {
-        mProgramDao = new ProgramDAO(DatabaseHelper.getDatabase());
+       // mProgramDao = new ProgramDAO(DatabaseHelper.getDatabase());
     }
 
     public ProgramBean getProgramBean(String programId) {

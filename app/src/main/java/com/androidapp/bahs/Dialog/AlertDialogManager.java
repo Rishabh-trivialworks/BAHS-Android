@@ -36,8 +36,8 @@ import butterknife.ButterKnife;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setTitleText(Constants.AlertConstant.NETWORK_ERROR)
-                .setContentText(Constants.AlertConstant.NETWORK_ERROR_CONTENT)
+        this.setTitleText(ServiceConstants.AlertConstant.NETWORK_ERROR)
+                .setContentText(ServiceConstants.AlertConstant.NETWORK_ERROR_CONTENT)
                 .setConfirmText("Retry") ;
     }
 

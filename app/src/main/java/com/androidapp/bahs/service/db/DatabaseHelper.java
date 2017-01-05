@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.androidapp.bahs.service.AppContext;
+import com.androidapp.bahs.utils.device.Syso;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -18,7 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		return INSTANCE;
 	}
 
-	public static SQLiteDatabase getDatabase(){
+	public SQLiteDatabase getDatabase(){
 		getInstance(AppContext.getInstance().getContext());
 		return INSTANCE.getWritableDatabase();
 	}
@@ -32,6 +33,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 		synchronized (getClass()) {
 			createTables(db,DBConstants.TABLE_PERSON_INFO);
+			Syso.debug("Database_created_successfully_------>");
 		}
 	}
 
@@ -47,7 +49,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	}
 	
 	private void createTables(SQLiteDatabase db,String table){
-		
+		db.execSQL(table);
 	}
 	
 	private void dropTables(SQLiteDatabase db){

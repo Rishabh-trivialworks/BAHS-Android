@@ -1,13 +1,10 @@
-package com.androidapp.bahs.utils;
+package com.androidapp.bahs.utils.date;
+
+import com.androidapp.bahs.utils.device.Syso;
 
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Locale;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Mobikasa on 12/20/2016.

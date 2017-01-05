@@ -20,14 +20,12 @@ import android.provider.MediaStore;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import com.androidapp.bahs.RefrenceWrapper;
 import com.androidapp.bahs.service.db.AppSharedPreferences;
-import com.androidapp.bahs.service.utils.AlertUtils;
-import com.androidapp.bahs.service.utils.Constants;
-import com.androidapp.bahs.service.utils.LogUtils;
+import com.androidapp.bahs.service.utils.ServiceConstants;
+import com.androidapp.bahs.utils.device.AlertUtils;
+import com.androidapp.bahs.utils.device.LogUtils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -313,7 +311,7 @@ public class PictureUtils {
                 ((Activity) mContext).runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        AlertUtils.showToast(mContext, "Memory Full");
+                        AlertUtils.getInstance().showToast(mContext, "Memory Full");
                     }
                 });
             }
@@ -332,7 +330,7 @@ public class PictureUtils {
         // Store image to default external storage directory
         Uri bmpUri = null;
         try {
-            bmpUri = Uri.fromFile(saveImage(bmp, System.currentTimeMillis() + "", Constants.IMAGE_DIRECTORY_CONSTANTS.SHARED_IMAGES));
+            bmpUri = Uri.fromFile(saveImage(bmp, System.currentTimeMillis() + "", ServiceConstants.IMAGE_DIRECTORY_CONSTANTS.SHARED_IMAGES));
         } catch (Exception e) {
             e.printStackTrace();
         }

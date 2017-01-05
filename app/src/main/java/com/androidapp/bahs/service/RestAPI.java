@@ -1,13 +1,11 @@
 package com.androidapp.bahs.service;
 
 import com.androidapp.bahs.service.bean.UserModel;
-import com.androidapp.bahs.service.ds.response.ListModel;
 import com.androidapp.bahs.service.ds.response.LoginModel;
 import com.androidapp.bahs.service.ds.response.LoginRequest;
 import com.androidapp.bahs.service.ds.response.LoginResponse;
-import com.androidapp.bahs.service.ds.response.RegisterDetail;
 import com.androidapp.bahs.service.ds.response.RegisterModel;
-import com.androidapp.bahs.service.utils.Constants;
+import com.androidapp.bahs.service.utils.ServiceConstants;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -16,7 +14,6 @@ import retrofit2.Callback;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
@@ -62,28 +59,28 @@ public interface RestAPI {
     /*
     * This is registration Api
     * */
-    @POST(Constants.ServiceConstants.TEST_REGISTER)
+    @POST(ServiceConstants.ServiceURL.TEST_REGISTER)
     Call<UserModel> signUpNew(@Body UserModel userModel);
 
     /*
     * This is Login Api
     * */
     @FormUrlEncoded
-    @POST(Constants.ServiceConstants.LOGIN)
+    @POST(ServiceConstants.ServiceURL.LOGIN)
     Call<LoginModel> logIn(@Field("password") String password, @Field("email") String Email, @Field("device_token") String device_token, @Field("device_id") String device_id, @Field("device_type") String device_type);
 
 
     @Multipart
-    @POST(Constants.ServiceConstants.REGISTER)
+    @POST(ServiceConstants.ServiceURL.REGISTER)
     Call<RegisterModel> register(@Part("first_name") String first_name, @Part("last_name") String last_name, @Part("appusername") String appusername, @Part("email") String email, @Part("phone") String phone, @Part("password") String password, @Part("device_token") String device_token, @Part("device_id") String device_id, @Part("device_type") String device_type, @Part("country_code") String country_code, @Part("referral_code") String referral_code, @Part("profile_image") RequestBody description, @Part MultipartBody.Part file
     );
 
     //Example getJson
-    @POST(Constants.ServiceConstants.REGISTER)
+    @POST(ServiceConstants.ServiceURL.REGISTER)
     Callback<LoginResponse> log_in(@Body LoginRequest login_request, CustomCallBacks<LoginResponse> customCallBacks);
 
     @FormUrlEncoded
-    @POST(Constants.ServiceConstants.TEST_REGISTER)
+    @POST(ServiceConstants.ServiceURL.TEST_REGISTER)
     Call<Object> signUp(@Field("first_name") String first_name,
                         @Field("last_name") String last_name,
                         @Field("email") String email,
@@ -101,7 +98,7 @@ public interface RestAPI {
 
     })
     @FormUrlEncoded
-    @POST(Constants.ServiceConstants.TEST_REGISTER)
+    @POST(ServiceConstants.ServiceURL.TEST_REGISTER)
     Call<Object> postTesting(@Field("with_user_id") String password);
 
 }

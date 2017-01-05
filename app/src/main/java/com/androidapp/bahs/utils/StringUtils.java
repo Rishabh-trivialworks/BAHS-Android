@@ -1,6 +1,9 @@
-package com.androidapp.bahs.service.utils;
+package com.androidapp.bahs.utils;
 import android.text.TextUtils;
 import android.util.Base64;
+
+import com.androidapp.bahs.utils.device.LogUtils;
+
 import java.util.UUID;
 import java.util.regex.Pattern;
 
@@ -80,9 +83,9 @@ public class StringUtils {
         return validation;
     }
 
-    public static boolean isPasswordValid(String email) {
+    public static boolean isPasswordValid(String password) {
         Pattern passPattern = Pattern.compile("((?=.*[a-z])(?=.*\\d).{6,16})");
-        Boolean validation = passPattern.matcher(email).matches();
+        Boolean validation = passPattern.matcher(password).matches();
         return validation;
     }
 
