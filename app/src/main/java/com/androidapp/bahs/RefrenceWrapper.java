@@ -19,6 +19,7 @@ import com.androidapp.bahs.utils.ImageUploadingDialog;
 import com.androidapp.bahs.utils.PictureUtils;
 import com.androidapp.bahs.utils.ServiceCallsUtils;
 import com.androidapp.bahs.utils.TableUtils;
+import com.androidapp.bahs.utils.FontTypeFace;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -39,6 +40,7 @@ public class RefrenceWrapper {
     private FragmentCallingUtils mFragmentCallingUtilsHandler;
     private ServiceCallsUtils mServiceCallHandler;
     private RestAPI service;
+    private FontTypeFace mFontTypeFace;
 
     public RefrenceWrapper(Context activity) {
         this.context = activity;
@@ -186,6 +188,13 @@ public class RefrenceWrapper {
             version = "performix.com.performix";
         }
         return version;
+    }
+
+    public FontTypeFace getFontTypeFace() {
+        if (mFontTypeFace == null) {
+            mFontTypeFace = new FontTypeFace();
+        }
+        return mFontTypeFace;
     }
 
 

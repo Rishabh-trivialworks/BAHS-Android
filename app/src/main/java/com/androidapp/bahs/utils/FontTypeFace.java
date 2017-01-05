@@ -1,4 +1,4 @@
-package com.androidapp.bahs.utils.device;
+package com.androidapp.bahs.utils;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class FontTypeFace {
 	
-	public static void setTypeFace(Context context, View... view) {
+	public  void setTypeFace(Context context, View... view) {
 		Typeface tf = Typeface.createFromAsset(context.getAssets(), "HelveticaNeueLT-Light.ttf");
 		for (View v : view) {
 			if(v instanceof TextView) {
@@ -27,7 +27,7 @@ public class FontTypeFace {
 			}
 		}
 	}
-	public static void setTypeFaceBold(Context context, View... view) {
+	public  void setTypeFaceBold(Context context, View... view) {
 		Typeface tf = Typeface.createFromAsset(context.getAssets(), "HelveticaNeueLT-Light.ttf");
 		for (View v : view) {
 			if(v instanceof TextView) {

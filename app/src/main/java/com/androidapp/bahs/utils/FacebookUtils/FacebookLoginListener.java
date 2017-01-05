@@ -1,4 +1,4 @@
-package com.androidapp.bahs.utils.facebookutils;
+package com.androidapp.bahs.utils.FacebookUtils;
 
 import com.facebook.GraphResponse;
 

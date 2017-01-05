@@ -1,4 +1,4 @@
-package com.androidapp.bahs.utils.facebookutils;
+package com.androidapp.bahs.utils.FacebookUtils;
 
 import android.content.Context;
 import android.os.Bundle;
