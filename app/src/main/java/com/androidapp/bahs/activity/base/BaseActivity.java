@@ -1,7 +1,9 @@
 package com.androidapp.bahs.activity.base;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +12,6 @@ import android.widget.TextView;
 
 import com.androidapp.bahs.R;
 import com.androidapp.bahs.RefrenceWrapper;
-import com.crittercism.app.Crittercism;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -28,7 +29,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(arg0);
         mContext = this;
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-        Crittercism.initialize(getApplicationContext(), getResources().getString(R.string.crittercism));
+        //Crittercism.initialize(getApplicationContext(), getResources().getString(R.string.crittercism));
     }
 
     @Override

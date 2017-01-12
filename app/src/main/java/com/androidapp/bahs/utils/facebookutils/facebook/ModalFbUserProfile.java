@@ -1,4 +1,4 @@
-package com.androidapp.bahs.utils.facebookutils.facebook;
+package com.androidapp.bahs.utils.FacebookUtils.facebook;
 import com.google.gson.annotations.Expose;
 
 public class ModalFbUserProfile

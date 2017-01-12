@@ -3,6 +3,7 @@ package com.androidapp.bahs.activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -11,6 +12,7 @@ import com.androidapp.bahs.R;
 import com.androidapp.bahs.RefrenceWrapper;
 import com.androidapp.bahs.activity.base.BaseActivity;
 import com.androidapp.bahs.adapter.Intro_ViewPagerAdapter;
+import com.androidapp.bahs.utils.device.Syso;
 
 
 public class IntroActivity extends BaseActivity implements View.OnClickListener {
@@ -101,5 +103,19 @@ public class IntroActivity extends BaseActivity implements View.OnClickListener 
         indicator1.setBackgroundResource(id2);
         mIndicator2.setBackgroundResource(id3);
         mIndicator3.setBackgroundResource(id4);
+    }
+
+
+    public abstract class x{
+        public  void abc(){
+            Syso.debug("Method--","method--abc-->x");
+        }
+    }
+
+    public class y extends x{
+        @Override
+        public void abc(){
+            Syso.debug("Method--","method--abc-->= y");
+        }
     }
 }

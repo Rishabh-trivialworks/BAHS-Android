@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:id="@+id/linearlayoutInsideScrollView"
               android:layout_width="match_parent"
@@ -9,9 +7,9 @@
               android:clickable="false"
               android:orientation="vertical">
 
-    <include
+    <!--<include
         android:id="@+id/header"
-        layout="@layout/create_account_header"/>
+        layout="@layout/default_header"/>-->
 
     <ScrollView
         android:layout_width="match_parent"
@@ -80,7 +78,8 @@
                         android:id="@+id/edt_firstname"
                         style="@style/signup_edittext"
                         android:hint="@string/firstname"
-                        android:inputType="textNoSuggestions|textCapWords"/>
+                        android:inputType="textNoSuggestions|textCapWords"
+                        />
 
                     <View
                         android:layout_width="match_parent"

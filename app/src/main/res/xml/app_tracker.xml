@@ -6,8 +6,9 @@
     <!-- Enable automatic Activity measurement -->
     <bool name="ga_autoActivityTracking">true</bool>
 
-    <!--  The property id associated with this analytics tracker -->
-    <string name="ga_trackingId">UA-89897320-1</string>
+    <!--  The property id associated with this analytics tracker  traker id generated from prateek account Username - prateekmobikasa123@gmail.com
+    password - mobikasa-->
+    <string name="ga_trackingId">UA-65242504-7</string>
 
     <string name="ga_sampleFrequency">100.0</string>
 

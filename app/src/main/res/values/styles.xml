@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">@color/app_green</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
     <style name="edittext">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -40,10 +41,13 @@
         <item name="android:layout_centerVertical">true</item>
         <item name="android:layout_marginLeft">@dimen/twenty_dp</item>
     </style>
+
     <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+         <item name="windowActionBar">false</item>
+         <item name="windowNoTitle">true</item>
+
     </style>
+
     <style name="MyRadioButton" parent="Theme.AppCompat.Light">
         <item name="colorControlNormal">@color/app_green</item>
         <item name="colorControlActivated">@color/app_green</item>
@@ -58,7 +62,8 @@
     </style>
 
     <style name="MyAnimation.Window" parent="@android:style/Animation.Activity">
-       // <item name="android:windowEnterAnimation">@anim/slide_up</item>
+        //
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
     </style>
 
 </resources>

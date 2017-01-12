@@ -211,7 +211,4 @@ public class UserModel implements Parcelable {
         dest.writeString(profileImagePath);
 
     }
-
-
-
 }

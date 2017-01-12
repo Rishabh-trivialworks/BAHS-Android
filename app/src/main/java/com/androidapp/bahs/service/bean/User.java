@@ -349,6 +349,7 @@ public class User extends AbsBindObject implements Comparable<User> {
 	public void setConfirmed(String confirmed) {
 		this.confirmed = confirmed;
 	}
+
 	@Override
 	public int compareTo(User another) {
 

@@ -9,9 +9,10 @@
     android:clickable="false"
     android:orientation="vertical">
 
-    <include
+    <!--<include
         android:id="@+id/header"
-        layout="@layout/create_account_header" />
+        layout="@layout/default_header" />
+    -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

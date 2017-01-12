@@ -1,4 +1,4 @@
-package com.androidapp.bahs.utils.facebookutils.facebook;
+package com.androidapp.bahs.utils.FacebookUtils.facebook;
 
 /**
  * Created by Mobikasa on 7/26/2016.
