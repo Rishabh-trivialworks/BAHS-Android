@@ -6,7 +6,7 @@ import android.content.SharedPreferences.Editor;
 
 import com.androidapp.bahs.service.AppContext;
 import com.androidapp.bahs.service.utils.ServiceConstants;
-import com.androidapp.bahs.utils.New18FCrypto;
+import com.androidapp.bahs.utils.DataCrypto;
 import com.androidapp.bahs.utils.device.LogUtils;
 
 public class AppSharedPreferences {
@@ -86,27 +86,27 @@ public class AppSharedPreferences {
         mPrefsEditor.clear();
         mPrefsEditor.putBoolean(mInviteFriendsFragment, val);
         mPrefsEditor.putBoolean(mWalkThroughTutorialStatus, val2);
-        mPrefsEditor.putString(mGcmId, New18FCrypto.prefEncrypt(ServiceConstants.GCM_CONSTANTS.REGISTER_AGAIN));
+        mPrefsEditor.putString(mGcmId, DataCrypto.prefEncrypt(ServiceConstants.GCM_CONSTANTS.REGISTER_AGAIN));
         mPrefsEditor.commit();
     }
 
     public String getAccessToken() {
-        return New18FCrypto.prefDecrypt(mPrefs.getString(mAccessToken, ""));
+        return DataCrypto.prefDecrypt(mPrefs.getString(mAccessToken, ""));
     }
 
     public void setAccessToken(String value) {
         LogUtils.debug("setAccessToken = ", value);
-        mPrefsEditor.putString(mAccessToken, New18FCrypto.prefEncrypt(value));
+        mPrefsEditor.putString(mAccessToken, DataCrypto.prefEncrypt(value));
         mPrefsEditor.commit();
     }
 
     public void setCustomIMEINO(String value, Context context) {
-        mPrefsEditor.putString(mCustomIMEO, New18FCrypto.prefEncrypt(value));
+        mPrefsEditor.putString(mCustomIMEO, DataCrypto.prefEncrypt(value));
         mPrefsEditor.commit();
     }
 
     public String getCustomIMEINO(Context context) {
-        return New18FCrypto.prefDecrypt(mPrefs.getString(mCustomIMEO, "NotFound"));
+        return DataCrypto.prefDecrypt(mPrefs.getString(mCustomIMEO, "NotFound"));
     }
 
     public String getName() {
@@ -291,11 +291,11 @@ public class AppSharedPreferences {
 
 
     public String getGcmId() {
-        return New18FCrypto.prefDecrypt(mPrefs.getString(mGcmId, ""));
+        return DataCrypto.prefDecrypt(mPrefs.getString(mGcmId, ""));
     }
 
     public void setGcmId(String value) {
-        mPrefsEditor.putString(mGcmId, New18FCrypto.prefEncrypt(value));
+        mPrefsEditor.putString(mGcmId, DataCrypto.prefEncrypt(value));
         mPrefsEditor.commit();
     }
 
@@ -446,11 +446,11 @@ public class AppSharedPreferences {
     }
 
     public String getStringValue(String key) {
-        return New18FCrypto.prefDecrypt(mPrefs.getString(key, ""));
+        return DataCrypto.prefDecrypt(mPrefs.getString(key, ""));
     }
 
     public void commitStringValue(String key, String value) {
-        mPrefsEditor.putString(key, New18FCrypto.prefEncrypt(value));
+        mPrefsEditor.putString(key, DataCrypto.prefEncrypt(value));
         mPrefsEditor.commit();
     }
 

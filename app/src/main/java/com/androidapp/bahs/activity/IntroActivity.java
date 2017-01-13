@@ -3,7 +3,6 @@ package com.androidapp.bahs.activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -47,6 +46,7 @@ public class IntroActivity extends BaseActivity implements View.OnClickListener 
         //refrenceWrapper.getFontTypeFace().setRobotoThinTypeFace(mContext, mSignUp);
         mSignUp.setOnClickListener(this);
         mCross.setOnClickListener(this);
+
     }
 
     @Override

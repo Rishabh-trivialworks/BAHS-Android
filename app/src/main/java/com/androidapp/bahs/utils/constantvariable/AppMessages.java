@@ -193,7 +193,10 @@ public class AppMessages {
         String CARDCONTAINERID="cardContainerID";
 
     }
-
+    public interface CrytoKey
+    {
+        String KEY="BAHSMobikasaAndroidMobi1eKe!";
+    }
 
 }
 
